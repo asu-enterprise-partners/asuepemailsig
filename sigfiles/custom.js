@@ -198,22 +198,22 @@ function destroyElm2(elm) {
 
     // console.log($('#subsidiary').val());
     if ($('#subsidiary').val() == 'realty'){
-      console.log('realty');
-      $('#preSubsidiary').html('<strong>University Realty</strong><br />Advancing the Arizona State University Knowledge Enterprise<br />An Affiliate of the ASU Foundation for A New American University');
+      // console.log('realty');
+      $('#preSubsidiary').html('<strong>University Realty</strong><br />Advancing the Arizona State University Knowledge Enterprise<br /><em>An Affiliate of the ASU Foundation for A New American University</em>');
     } else if ($('#subsidiary').val() == 'skysong'){
-      console.log('skysong');
+      // console.log('skysong');
       $('#preSubsidiary').html('<strong>Skysong Innovations</strong><br />Advancing the Arizona State University Knowledge Enterprise');
     } else if ($('#subsidiary').val() == 'asuep'){
-      console.log('asuep');
+      // console.log('asuep');
       $('#preSubsidiary').html('<strong>ASU Enterprise Partners</strong>');
     } else if ($('#subsidiary').val() == 'asuf'){
-      console.log('asuf');
+      // console.log('asuf');
       $('#preSubsidiary').html('<strong>ASU Foundation</strong>');
     } else if ($('#subsidiary').val() == 'asure'){
-      console.log('asure');
+      // console.log('asure');
       $('#preSubsidiary').html('<strong>ASURE</strong>');
     } else if ($('#subsidiary').val() == 'ecasu'){
-      console.log('ecasu');
+      // console.log('ecasu');
       $('#preSubsidiary').html('<strong>ECASU</strong>');
     }
 
@@ -259,7 +259,7 @@ function destroyElm2(elm) {
    if($('#web').val() != '') {
        var webText = $('#web').val().toLowerCase();
        var webText2 = ensureHTTP(webText);
-       $('#preWeb').html('<strong>web: </strong><a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="'+webText2+'">'+webText+'<a/>');
+       $('#preWeb').html('<strong>website: </strong><a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="'+webText2+'">'+webText+'<a/>');
    }
    if($('#addLine1').val() != '' || $('#addLine2').val() != '' || $('#addLine3').val() != '') {
    var val = '<tr height="0"><td align="left"></td></tr>';
@@ -333,9 +333,31 @@ function destroyElm2(elm) {
  }
  var dasValue = '<tr><td>';
  $('.subDeptContainerSocial').each(function() {
- var link = $('.subValLink',this).val();
+
+ // var link = $('.subValLink',this).val();
+ // console.log(link);
+
  var title = $('.socialTitle',this).val();
-   dasValue = dasValue + '<span style="color:#fff; background:#8C1D40; padding:1px; font-size:8pt; font-weight:normal;"><a style="color:#fff; text-decoration:none;" href="'+ensureHTTP(link)+'">'+title+'</a></span>&nbsp;';
+ console.log(title);
+
+ if (title == 'https://www.facebook.com/asufoundation/'){
+   var link = 'Facebook';
+   console.log(link);
+ } else if (title == 'https://www.linkedin.com/company/asu-foundation-for-a-new-american-university'){
+   var link = 'LinkedIn';
+   console.log(link);
+ } else if (title == 'https://twitter.com/asufoundation'){
+   var link = '@asufoundation';
+   console.log(link);
+ } else if (title == 'https://twitter.com/rickshangraw'){
+   var link = '@rickshangraw';
+   console.log(link);
+ } else if (title == 'https://twitter.com/gretchenbuhlig'){
+   var link = '@gretchenbuhlig';
+   console.log(link);
+ }
+
+dasValue = dasValue + '<span style="color:#fff; background:#8C1D40; padding:1px; font-size:8pt; font-weight:normal;"><a style="color:#fff; text-decoration:none;" href="'+ensureHTTP(title)+'">'+link+'</a></span>&nbsp;';
 
  });
    dasValue = dasValue + '</td></tr>';
@@ -554,24 +576,22 @@ function destroyElm2(elm) {
       if(elm2 === undefined) {
           elm2 = "";
        }
-     var options = ['facebook', 'twitter', 'instagram', 'snapchat', 'linkedin', 'youtube', 'vimeo', 'google+', 'slack', 'pinterest', 'google scholar'];
+     // var options = ['Facebook - ASU Foundation', 'LinkedIn - ASU Foundation', 'Twitter - ASU Foundation', 'Twitter - @rickshangraw', 'Twitter - @gretchenbuhlig'];
      var value = '<div class="subDeptContainerSocial">'+
      '<div onClick="destroyElm(this)" class="destroyElm">X</div><div class="inputContainer" style="width:45%;">'+
      '<label> Social Media '+linkSocial+' </label>'+
-     '<select class="socialTitle">';
-     for(let val of options) {
-       if($.trim(val) === $.trim(elm)) {
-         value += '<option selected value="'+$.trim(val)+'">'+$.trim(val)+'</option>'
-       }
-       else {
-         value += '<option value="'+$.trim(val)+'">'+$.trim(val)+'</option>'
-       }
-     }
+     '<select class="socialTitle">'+'<option value="https://www.facebook.com/asufoundation/">Facebook - ASU Foundation</option>'+'<option value="https://www.linkedin.com/company/asu-foundation-for-a-new-american-university">LinkedIn - ASU Foundation</option>'+'<option value="https://twitter.com/asufoundation">@asufoundation</option>'+'<option value="https://twitter.com/rickshangraw">@rickshangraw</option>'+'<option value="https://twitter.com/gretchenbuhlig">@gretchenbuhlig</option>';
+     // for(let val of options) {
+     //   if($.trim(val) === $.trim(elm)) {
+     //     value += '<option selected value="'+$.trim(val)+'">'+$.trim(val)+'</option>'
+     //   }
+     //   else {
+     //     value += '<option value="'+$.trim(val)+'">'+$.trim(val)+'</option>'
+     //   }
+     // }
      value += '</select>' +
-     '</div><div class="inputContainer" style="width:45%;">'+
-     '<label> Social Media Link '+linkSocial+' </label>'+
-     '<input type="text" class="subValLink" value="'+elm2+'" />'+
-     '</div> <br class="clear"/></div>';
+     '</div><br class="clear">';
+     // console.log(value);
      $('#socialMediaHolder').append(value);
      linkSocial++;
    }
