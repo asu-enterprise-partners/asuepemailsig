@@ -488,3 +488,9 @@ button.addTitles {
     display:none;
   }
 }
+
+/* instructions css */
+
+.paddingOnTop {
+  padding-top: 6px;
+}
