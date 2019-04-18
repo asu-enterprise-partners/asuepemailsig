@@ -410,7 +410,7 @@ dasValue = dasValue + '<span style="color:#fff; background:#8C1D40; padding:1px;
     '</tr>'+
     '<tr>' +
        '<td>'+
-        '<span style="color:#8C1D40; font-weight:bold; font-size:8pt;">Together our potential is limitless</span>'+
+        '<span style="color:#8C1D40; font-weight:bold; font-size:8pt;">Together, our potential is limitless</span>'+
        '</td>'+
     '</tr>'+
      '<tr>' +
