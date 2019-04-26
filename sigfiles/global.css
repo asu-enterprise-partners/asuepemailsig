@@ -490,6 +490,21 @@ button.addTitles {
 }
 
 /* instructions css */
+.accordion-expand-holder {
+    text-align: center;
+    padding: 10px;
+}
+.ui-accordion-header{
+  display:block;
+  cursor:pointer;
+  position:relative;
+}
+.ui-accordion-header:hover{
+  text-decoration:underline;
+}
+.ui-corner-all{
+  border-bottom-right-radius:4px;
+}
 
 .paddingOnTop {
   padding-top: 6px;
