@@ -238,15 +238,15 @@ function destroyElm2(elm) {
    faxVal = '';
    cellVal = '';
    if($('#phone').val() != '') {
-     phoneVal = '<strong>p: </strong> <a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="tel:'+$('#phone').val()+'">'+$('#phone').val()+'</a>&nbsp;&nbsp;';
+     phoneVal = '<strong>o: </strong> <a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="tel:'+$('#phone').val()+'">'+$('#phone').val()+'</a>&nbsp;&nbsp;';
    }
    if($('#fax').val() != '') {
-     faxVal = '<strong>f: </strong> <a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="tel:'+$('#fax').val()+'">'+$('#fax').val()+'</a>&nbsp;&nbsp;';
+     faxVal = '<strong> f: </strong> <a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="tel:'+$('#fax').val()+'">'+$('#fax').val()+'</a>&nbsp;&nbsp;';
    }
    if($('#cell').val() != '') {
      cellVal = '<strong>c: </strong> <a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="tel:'+$('#cell').val()+'">'+$('#cell').val()+'</a>';
    }
-   $('#prePhone').html(phoneVal + faxVal + cellVal);
+   $('#prePhone').html(phoneVal + cellVal + "</br>" + faxVal);
    if($('#email').val() != '') {
      if(validateEmail($('#email').val())) {
        var emailText = $('#email').val().toLowerCase();
@@ -261,7 +261,7 @@ function destroyElm2(elm) {
        var webText2 = ensureHTTP(webText);
        $('#preWeb').html('<strong>website: </strong><a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="'+webText2+'">'+webText+'<a/>');
    }
-   if($('#addLine1').val() != '' || $('#addLine2').val() != '' || $('#addLine3').val() != '') {
+   /*if($('#addLine1').val() != '' || $('#addLine2').val() != '' || $('#addLine3').val() != '') {
    var val = '<tr height="0"><td align="left"></td></tr>';
     $('#address').append(val);
    }
@@ -272,7 +272,7 @@ function destroyElm2(elm) {
        '</td>'+
     '</tr>';
     $('#address').append(val);
-   }
+  }*/
 
    if($('#addLine11').val() != '' || $('#addLine22').val() != '' || $('#addLine33').val() != '') {
    var val = '<tr height="0"><td align="left"></td></tr>';
@@ -281,7 +281,7 @@ function destroyElm2(elm) {
    if($('#addLine11').val() != '') {
    var val = '<tr>' +
        '<td>'+
-        '<span style="color:#000; font-size:8pt; font-weight:bold;">'+$('#addLine11').val()+' '+$('#addLine22').val()+' '+$('#addLine33').val()+'</span>'+
+        '<span style="color:#000; font-size:8pt; font-weight:normal;">'+ "PO Box " + $('#addLine11').val()+' | '+$('#addLine22').val()+'  |  '+$('#addLine33').val()+'</span>'+
        '</td>'+
     '</tr>';
     $('#addressPO').append(val);
