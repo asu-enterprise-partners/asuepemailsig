@@ -246,7 +246,7 @@ function destroyElm2(elm) {
    if($('#cell').val() != '') {
      cellVal = '<strong>c: </strong> <a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="tel:'+$('#cell').val()+'">'+$('#cell').val()+'</a>';
    }
-   $('#prePhone').html(phoneVal + cellVal + "</br>" + faxVal);
+   $('#prePhone').html("<br />"+phoneVal + cellVal + "</br>" + faxVal);
    if($('#email').val() != '') {
      if(validateEmail($('#email').val())) {
        var emailText = $('#email').val().toLowerCase();
@@ -281,7 +281,7 @@ function destroyElm2(elm) {
    if($('#addLine11').val() != '') {
    var val = '<tr>' +
        '<td>'+
-        '<span style="color:#000; font-size:8pt; font-weight:normal;">'+ "PO Box " + $('#addLine11').val()+' | '+$('#addLine22').val()+'  |  '+$('#addLine33').val()+'</span>'+
+        '<span style="color:#000; font-size:8pt; font-weight:normal;">'+$('#addLine11').val()+' | '+$('#addLine22').val()+'  |  '+$('#addLine33').val()+'</span>'+
        '</td>'+
     '</tr>';
     $('#addressPO').append(val);
@@ -621,7 +621,7 @@ dasValue = dasValue + '<span style="color:#fff; background:#8C1D40; padding:1px;
      // var options = ['Facebook - ASU Foundation', 'LinkedIn - ASU Foundation', 'Twitter - ASU Foundation', 'Twitter - @rickshangraw', 'Twitter - @gretchenbuhlig'];
      var value = '<div class="subDeptContainerSocial">'+
      '<div onClick="destroyElm(this)" class="destroyElm">X</div><div class="inputContainer" style="width:45%;">'+
-     '<label> Social Media '+linkSocial+' </label>'+
+     '<label> Link '+linkSocial+' </label>'+
      '<select class="socialTitle">'+'<option value="https://www.facebook.com/asufoundation/">Facebook - ASU Foundation</option>'+'<option value="https://www.linkedin.com/company/asu-foundation-for-a-new-american-university">LinkedIn - ASU Foundation</option>'+'<option value="https://twitter.com/asufoundation">@asufoundation</option>'+'<option value="https://twitter.com/rickshangraw">@rickshangraw</option>'+'<option value="https://twitter.com/gretchenbuhlig">@gretchenbuhlig</option>';
      // for(let val of options) {
      //   if($.trim(val) === $.trim(elm)) {
