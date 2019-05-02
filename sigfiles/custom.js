@@ -274,8 +274,16 @@ function destroyElm2(elm) {
     $('#address').append(val);
   }*/
 
-   if($('#addLine11').val() != '' || $('#addLine22').val() != '' || $('#addLine33').val() != '') {
-   var val = '<tr height="0"><td align="left"></td></tr>';
+   // if($('#addLine11').val() != '' || $('#addLine22').val() != '' || $('#addLine33').val() != '') {
+   // var val = '<tr height="0"><td align="left"></td></tr>';
+   //  $('#addressPO').append(val);
+   // }
+   if($('#addLine11').val() == '' && $('#addLine22').val() == '' && $('#addLine33').val() == '') {
+   var val = '<tr>' +
+       '<td>'+
+        '<span style="color:#000; font-size:8pt; font-weight:normal;">'+'PO Box 2260'+' | '+'Tempe, AZ'+'  |  '+'85280-2260'+'</span>'+
+       '</td>'+
+    '</tr>';
     $('#addressPO').append(val);
    }
    if($('#addLine11').val() != '') {
