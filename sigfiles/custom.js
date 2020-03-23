@@ -208,7 +208,7 @@ function destroyElm2(elm) {
       $('#preSubsidiary').html('<strong>ASU Enterprise Partners</strong>');
     } else if ($('#subsidiary').val() == 'asuf'){
       // console.log('asuf');
-      $('#preSubsidiary').html('<strong>ASU Foundation</strong>');
+      $('#preSubsidiary').html('<strong>ASU Foundation for A New American University</strong><br />Serving Arizona State University');
     } else if ($('#subsidiary').val() == 'asure'){
       // console.log('asure');
       $('#preSubsidiary').html('<strong>ASURE</strong>');
