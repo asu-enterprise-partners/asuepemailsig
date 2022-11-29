@@ -182,19 +182,21 @@ function destroyElm2(elm) {
    });
  }
  function updateAll() {
-   var r = confirm("Please verify that all the information entered in correct and spelled/abbreviated correctly. Press OK to proceed.");
-   if(r) {
-   showMask();
-   $('.tableHolder').empty();
-   $('.hyperlinkHolder').empty();
-   $('.bottomHolder').empty();
-   $('.socialMediaHolder').empty();
-   $('#address').empty();
-   $('#addressPO').empty();
+  var r = confirm("Please verify that all the information entered in correct and spelled/abbreviated correctly. Press OK to proceed.");
+  if(r) {
+    showMask();
+    // Reset the existing generation
+    $('.tableHolder').empty();
+    $('.hyperlinkHolder').empty();
+    $('.bottomHolder').empty();
+    $('.socialMediaHolder').empty();
+    $('#address').empty();
+    $('#addressPO').empty();
+    $('#customStatementsDisplay').empty();
 
-   $('#preName').html($("#name").val());
-   $('#preTitleDept').html($("#titleDept").val());
-   $('#preDept').html($("#Dept").val());
+    $('#preName').html($("#name").val());
+    $('#preTitleDept').html($("#titleDept").val());
+    $('#preDept').html($("#Dept").val());
 
     // console.log($('#subsidiary').val());
     if ($('#subsidiary').val() == 'realty'){
@@ -217,204 +219,213 @@ function destroyElm2(elm) {
       $('#preSubsidiary').html('<strong>ECASU</strong>');
     }
 
-     // $('#preSubsidiary').html('$('#subsidiary option:selected').text()');
-     // $('#preSchool').html('Arizona State University');
+    // $('#preSubsidiary').html('$('#subsidiary option:selected').text()');
+    // $('#preSchool').html('Arizona State University');
 
-   $('.subValue').each(function() {
-   var parent = $(this).parent().parent();
-   var text2 = $('.subValue2', parent).val();
-   var text = $(this).val();
-   var val = '<tr>' +
-       '<td>'+
-        '<span style="color:#000; font-size:8pt; font-weight:normal;">'+text+'</span>'+
-       '</td></tr>'+
-       '<tr><td>'+
-        '<span style="color:#000; font-size:8pt; font-weight:normal;">'+text2+'</span>'+
-       '</td>'+
-    '</tr>';
-     $('.tableHolder').append(val);
-   });
-   phoneVal = '';
-   faxVal = '';
-   cellVal = '';
-   if($('#phone').val() != '') {
-     phoneVal = '<strong>o: </strong> <a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="tel:'+$('#phone').val()+'">'+$('#phone').val()+'</a>&nbsp;&nbsp;';
-   }
-   if($('#fax').val() != '') {
-     faxVal = '<strong> f: </strong> <a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="tel:'+$('#fax').val()+'">'+$('#fax').val()+'</a>&nbsp;&nbsp;';
-   }
-   if($('#cell').val() != '') {
-     cellVal = '<strong>c: </strong> <a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="tel:'+$('#cell').val()+'">'+$('#cell').val()+'</a>';
-   }
-   $('#prePhone').html("<br />"+phoneVal + cellVal + "</br>" + faxVal);
-   if($('#email').val() != '') {
-     if(validateEmail($('#email').val())) {
-       var emailText = $('#email').val().toLowerCase();
-       $('#preEmail').html('<strong>email: </strong><a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="mailto:'+emailText+'">'+emailText+'<a/>');
-     }
-     else {
-       alert("That is not a valid email.  Please make sure to enter a valid email address")
-     }
-   }
-   if($('#web').val() != '') {
-       var webText = $('#web').val().toLowerCase();
-       var webText2 = ensureHTTP(webText);
-       $('#preWeb').html('<strong>website: </strong><a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="'+webText2+'">'+webText+'<a/>');
-   }
-   /*if($('#addLine1').val() != '' || $('#addLine2').val() != '' || $('#addLine3').val() != '') {
-   var val = '<tr height="0"><td align="left"></td></tr>';
-    $('#address').append(val);
-   }
-   if($('#addLine1').val() != '') {
-   var val = '<tr>' +
-       '<td>'+
-        '<span style="color:#000; font-size:8pt; font-weight:bold;">'+$('#addLine1').val()+' '+$('#addLine2').val()+' '+$('#addLine3').val()+'</span>'+
-       '</td>'+
-    '</tr>';
-    $('#address').append(val);
-  }*/
+    $('.subValue').each(function() {
+    var parent = $(this).parent().parent();
+    var text2 = $('.subValue2', parent).val();
+    var text = $(this).val();
+    var val = '<tr>' +
+        '<td>'+
+          '<span style="color:#000; font-size:8pt; font-weight:normal;">'+text+'</span>'+
+        '</td></tr>'+
+        '<tr><td>'+
+          '<span style="color:#000; font-size:8pt; font-weight:normal;">'+text2+'</span>'+
+        '</td>'+
+      '</tr>';
+      $('.tableHolder').append(val);
+    });
+    phoneVal = '';
+    faxVal = '';
+    cellVal = '';
+    if($('#phone').val() != '') {
+      phoneVal = '<strong>o: </strong> <a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="tel:'+$('#phone').val()+'">'+$('#phone').val()+'</a>&nbsp;&nbsp;';
+    }
+    if($('#fax').val() != '') {
+      faxVal = '<strong> f: </strong> <a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="tel:'+$('#fax').val()+'">'+$('#fax').val()+'</a>&nbsp;&nbsp;';
+    }
+    if($('#cell').val() != '') {
+      cellVal = '<strong>c: </strong> <a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="tel:'+$('#cell').val()+'">'+$('#cell').val()+'</a>';
+    }
+    $('#prePhone').html("<br />"+phoneVal + cellVal + "</br>" + faxVal);
+    if($('#email').val() != '') {
+      if(validateEmail($('#email').val())) {
+        var emailText = $('#email').val().toLowerCase();
+        $('#preEmail').html('<strong>email: </strong><a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="mailto:'+emailText+'">'+emailText+'<a/>');
+      }
+      else {
+        alert("That is not a valid email.  Please make sure to enter a valid email address")
+      }
+    }
+    if($('#web').val() != '') {
+        var webText = $('#web').val().toLowerCase();
+        var webText2 = ensureHTTP(webText);
+        $('#preWeb').html('<strong>website: </strong><a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="'+webText2+'">'+webText+'<a/>');
+    }
+    /*if($('#addLine1').val() != '' || $('#addLine2').val() != '' || $('#addLine3').val() != '') {
+    var val = '<tr height="0"><td align="left"></td></tr>';
+      $('#address').append(val);
+    }
+    if($('#addLine1').val() != '') {
+    var val = '<tr>' +
+        '<td>'+
+          '<span style="color:#000; font-size:8pt; font-weight:bold;">'+$('#addLine1').val()+' '+$('#addLine2').val()+' '+$('#addLine3').val()+'</span>'+
+        '</td>'+
+      '</tr>';
+      $('#address').append(val);
+    }*/
 
-   // if($('#addLine11').val() != '' || $('#addLine22').val() != '' || $('#addLine33').val() != '') {
-   // var val = '<tr height="0"><td align="left"></td></tr>';
-   //  $('#addressPO').append(val);
-   // }
-   if($('#addLine11').val() == '' && $('#addLine22').val() == '' && $('#addLine33').val() == '') {
-   var val = '<tr>' +
-       '<td>'+
-        '<span style="color:#000; font-size:8pt; font-weight:normal;">'+'PO Box 2260'+' | '+'Tempe, AZ'+'  |  '+'85280-2260'+'</span>'+
-       '</td>'+
-    '</tr>';
-    $('#addressPO').append(val);
-   }
-   if($('#addLine11').val() != '') {
-   var val = '<tr>' +
-       '<td>'+
-        '<span style="color:#000; font-size:8pt; font-weight:normal;">'+$('#addLine11').val()+' | '+$('#addLine22').val()+'  |  '+$('#addLine33').val()+'</span>'+
-       '</td>'+
-    '</tr>';
-    $('#addressPO').append(val);
-   }
+    // if($('#addLine11').val() != '' || $('#addLine22').val() != '' || $('#addLine33').val() != '') {
+    // var val = '<tr height="0"><td align="left"></td></tr>';
+    //  $('#addressPO').append(val);
+    // }
+    if($('#addLine11').val() == '' && $('#addLine22').val() == '' && $('#addLine33').val() == '') {
+    var val = '<tr>' +
+        '<td>'+
+          '<span style="color:#000; font-size:8pt; font-weight:normal;">'+'PO Box 2260'+' | '+'Tempe, AZ'+'  |  '+'85280-2260'+'</span>'+
+        '</td>'+
+      '</tr>';
+      $('#addressPO').append(val);
+    }
+    if($('#addLine11').val() != '') {
+    var val = '<tr>' +
+        '<td>'+
+          '<span style="color:#000; font-size:8pt; font-weight:normal;">'+$('#addLine11').val()+' | '+$('#addLine22').val()+'  |  '+$('#addLine33').val()+'</span>'+
+        '</td>'+
+      '</tr>';
+      $('#addressPO').append(val);
+    }
 
-//additional functionality
-   var headers = $('#accordion .accordion-header');
-   var contentAreas = $('#accordion .ui-accordion-content ').hide();
-   var expandLink = $('.accordion-expand-all');
+    let customStatementVal = '';
+    if($('#customStatements').val() != '') {
+      customStatementVal =
+      '<tr>' +
+        '<td>'+
+          '<span style="color:#000; font-size:8pt; font-weight:normal;">'+$('#customStatements').val()+'</span>'+
+        '</td>'+
+      '</tr>';
+      $('#customStatementsDisplay').append(customStatementVal);
+    }
 
-   // add the accordion functionality
-   headers.click(function() {
-       var panel = $(this).next();
-       var isOpen = panel.is(':visible');
+    //additional functionality
+    var headers = $('#accordion .accordion-header');
+    var contentAreas = $('#accordion .ui-accordion-content ').hide();
+    var expandLink = $('.accordion-expand-all');
 
-       // open or close as necessary
-       panel[isOpen? 'slideUp': 'slideDown']()
-           // trigger the correct custom event
-           trigger(isOpen? 'hide': 'show');
+    // add the accordion functionality
+    headers.click(function() {
+        var panel = $(this).next();
+        var isOpen = panel.is(':visible');
 
-       // stop the link from causing a pagescroll
-       return false;
-   });
+        // open or close as necessary
+        panel[isOpen? 'slideUp': 'slideDown']()
+            // trigger the correct custom event
+            trigger(isOpen? 'hide': 'show');
 
-   // when panels open or close, check to see if they're all open
-   contentAreas.on({
-       // whenever we open a panel, check to see if they're all open
-       // if all open, swap the button to collapser
-       show: function(){
-           var isAllOpen = !contentAreas.is(':hidden');
-           if(isAllOpen){
-               expandLink.text('Collapse All')
-                   .data('isAllOpen', true);
-           }
-       },
-       // whenever we close a panel, check to see if they're all open
-       // if not all open, swap the button to expander
-       hide: function(){
-           var isAllOpen = !contentAreas.is(':hidden');
-           if(!isAllOpen){
-               expandLink.text('Expand all')
-               .data('isAllOpen', false);
-           }
-       }
-   });
+        // stop the link from causing a pagescroll
+        return false;
+    });
+
+    // when panels open or close, check to see if they're all open
+    contentAreas.on({
+        // whenever we open a panel, check to see if they're all open
+        // if all open, swap the button to collapser
+        show: function(){
+            var isAllOpen = !contentAreas.is(':hidden');
+            if(isAllOpen){
+                expandLink.text('Collapse All')
+                    .data('isAllOpen', true);
+            }
+        },
+        // whenever we close a panel, check to see if they're all open
+        // if not all open, swap the button to expander
+        hide: function(){
+            var isAllOpen = !contentAreas.is(':hidden');
+            if(!isAllOpen){
+                expandLink.text('Expand all')
+                .data('isAllOpen', false);
+            }
+        }
+    });
 
 
-   // if($('#addLine2').val() != '') {
-   // var val = '<tr>' +
-   //     '<td>'+
-   //      '<span style="color:#000; font-size:8pt; font-weight:normal;">'+$('#addLine2').val()+'</span>'+
-   //     '</td>'+
-   //  '</tr>';
-   //  $('#address').append(val);
-   // }
-   // if($('#addLine3').val() != '') {
-   // var val = '<tr>' +
-   //     '<td>'+
-   //      '<span style="color:#000; font-size:8pt; font-weight:normal;">'+$('#addLine3').val()+'</span>'+
-   //     '</td>'+
-   //  '</tr>';
-   //  $('#address').append(val);
-   // }
+    // if($('#addLine2').val() != '') {
+    // var val = '<tr>' +
+    //     '<td>'+
+    //      '<span style="color:#000; font-size:8pt; font-weight:normal;">'+$('#addLine2').val()+'</span>'+
+    //     '</td>'+
+    //  '</tr>';
+    //  $('#address').append(val);
+    // }
+    // if($('#addLine3').val() != '') {
+    // var val = '<tr>' +
+    //     '<td>'+
+    //      '<span style="color:#000; font-size:8pt; font-weight:normal;">'+$('#addLine3').val()+'</span>'+
+    //     '</td>'+
+    //  '</tr>';
+    //  $('#address').append(val);
+    // }
 
-   if($('.subDeptMainContainer')[0]) {
-     var val = '<tr height="10"><td align="left"></td></tr>';
-     $('.hyperlinkHolder').prepend(val);
-   }
- $('.subDeptMainContainer').each(function() {
-   var val = '<tr><td align="left">';
-   var elm = $(this);
-   var cnt = 0;
-   $('.linkContainer', elm).each(function() {
-     if(cnt > 0) {
-       val += " | ";
-     }
-   var text = $('.subValueString', this).val();
-   var linkText = $('.subValueLinkText', this).val();
-   var link = $('.subValueLink', this).val();
+    if($('.subDeptMainContainer')[0]) {
+      var val = '<tr height="10"><td align="left"></td></tr>';
+      $('.hyperlinkHolder').prepend(val);
+    }
+    $('.subDeptMainContainer').each(function() {
+      var val = '<tr><td align="left">';
+      var elm = $(this);
+      var cnt = 0;
+      $('.linkContainer', elm).each(function() {
+        if(cnt > 0) {
+          val += " | ";
+        }
+        var text = $('.subValueString', this).val();
+        var linkText = $('.subValueLinkText', this).val();
+        var link = $('.subValueLink', this).val();
 
-   var linkValue = generateLink(text, linkText, link);
-       val += '<span style="color:#000; font-size:8pt; font-weight:normal;"> '+linkValue+' </span>';
-       cnt++;
-  });
-  val += '</td></tr>';
- $('.hyperlinkHolder').append(val);
- });
- if($('.subDeptContainerSocial')[0]) {
-   var val = '<tr height="10"><td align="left"></td></tr>';
-   $('.socialMediaHolder').prepend(val);
- }
- var dasValue = '<tr><td>';
- $('.subDeptContainerSocial').each(function() {
+        var linkValue = generateLink(text, linkText, link);
+        val += '<span style="color:#000; font-size:8pt; font-weight:normal;"> '+linkValue+' </span>';
+        cnt++;
+      });
+      val += '</td></tr>';
+      $('.hyperlinkHolder').append(val);
+    });
+    if($('.subDeptContainerSocial')[0]) {
+      var val = '<tr height="10"><td align="left"></td></tr>';
+      $('.socialMediaHolder').prepend(val);
+    }
+    var dasValue = '<tr><td>';
+    $('.subDeptContainerSocial').each(function() {
+      // var link = $('.subValLink',this).val();
+      // console.log(link);
 
- // var link = $('.subValLink',this).val();
- // console.log(link);
+      var title = $('.socialTitle',this).val();
+      console.log(title);
 
- var title = $('.socialTitle',this).val();
- console.log(title);
+      if (title == 'https://www.facebook.com/asufoundation/'){
+        var link = 'Facebook';
+        console.log(link);
+      } else if (title == 'https://www.linkedin.com/company/asu-foundation-for-a-new-american-university'){
+        var link = 'LinkedIn';
+        console.log(link);
+      } else if (title == 'https://twitter.com/asufoundation'){
+        var link = '@asufoundation';
+        console.log(link);
+      } else if (title == 'https://twitter.com/rickshangraw'){
+        var link = '@rickshangraw';
+        console.log(link);
+      } else if (title == 'https://twitter.com/gretchenbuhlig'){
+        var link = '@gretchenbuhlig';
+        console.log(link);
+      }
+      dasValue = dasValue + '<span style="color:#fff; background:#8C1D40; padding:1px; font-size:8pt; font-weight:normal;"><a style="color:#fff; text-decoration:none;" href="'+ensureHTTP(title)+'">'+link+'</a></span>&nbsp;';
+    });
 
- if (title == 'https://www.facebook.com/asufoundation/'){
-   var link = 'Facebook';
-   console.log(link);
- } else if (title == 'https://www.linkedin.com/company/asu-foundation-for-a-new-american-university'){
-   var link = 'LinkedIn';
-   console.log(link);
- } else if (title == 'https://twitter.com/asufoundation'){
-   var link = '@asufoundation';
-   console.log(link);
- } else if (title == 'https://twitter.com/rickshangraw'){
-   var link = '@rickshangraw';
-   console.log(link);
- } else if (title == 'https://twitter.com/gretchenbuhlig'){
-   var link = '@gretchenbuhlig';
-   console.log(link);
- }
-
-dasValue = dasValue + '<span style="color:#fff; background:#8C1D40; padding:1px; font-size:8pt; font-weight:normal;"><a style="color:#fff; text-decoration:none;" href="'+ensureHTTP(title)+'">'+link+'</a></span>&nbsp;';
-
- });
-   dasValue = dasValue + '</td></tr>';
- $('.socialMediaHolder').append(dasValue);
- $('.bottomHolder').append(otherStuff());
- }
- }
+    dasValue = dasValue + '</td></tr>';
+    $('.socialMediaHolder').append(dasValue);
+    $('.bottomHolder').append(otherStuff());
+  }
+  }
  function generateLink(text, linkText, link) {
    slitWords = text.split(linkText);
    link = ensureHTTP(link);

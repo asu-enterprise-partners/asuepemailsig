@@ -184,6 +184,12 @@
       </div>
       <br class="clear">
 
+      <div class="inputContainer phone">
+        <label for="addLine33">Mailing address line 3 <span style="font-size: 12px; font-weight: 100;">(skip to use placeholder input)</span></label>
+        <input id="addLine33" type="text" name="addLine33" placeholder="85280-2260">
+      </div>
+      <br class="clear">
+
       <!-- <br class="clear">
       <br> -->
       <!-- <h2> Custom statements </h2>
@@ -206,6 +212,12 @@
       </div>
       <br> -->
 
+      <h2 style="padding-top: 20px;"><span style="background-color: #ffc627; padding: 4px;">Custom statements</span></h2>
+      <div class="inputContainer phone">
+        <label for="customStatements">Your custom statement(s)<span style="font-size: 12px; font-weight: 100;"> (optional)</span></label>
+        <textarea id="customStatements" name="customStatements" rows="5" maxlength="400" style="width:50em; height: 10em;" placeholder="Your custom statement."></textarea>
+      </div>
+      <br class="clear">
 
       <h2 style="padding-top: 20px; padding-bottom: 20px;"><span style="background-color: #ffc627; padding: 4px;">Social media</span> <span style="color: red; font-weight: bold; font-size: 16px;">(OPTIONAL)</span></h2></h2>
       <button onclick="createSocialMedia()" style="margin: 0 0 0 0 !important;"><i class="fa fa-plus" aria-hidden="true"></i> Add social media link</button>
@@ -289,30 +301,28 @@
           </tbody> -->
 
           <!--<tbody id="address"></tbody>-->
-          <tbody><tr height="30">
-            <td>
-             <span style="color:#000; font-size:8pt" id="prePhone"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-             <span style="color:#000; font-size:8pt" id="preEmail"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-             <span style="color:#000; font-size:8pt" id="preWeb"></span>
-            </td>
-          </tr>
-          <tbody id="addressPO">
+          <tbody>
+            <tr height="30">
+              <td>
+                <span style="color:#000; font-size:8pt" id="prePhone"></span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#000; font-size:8pt" id="preEmail"></span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#000; font-size:8pt" id="preWeb"></span>
+              </td>
+            </tr>
+            <tbody id="addressPO"></tbody>
+            <tbody id="customStatementsDisplay"></tbody>
           </tbody>
-          </tbody><tbody class="hyperlinkHolder">
-          </tbody>
-          <tbody class="socialMediaHolder">
-
-          </tbody>
-          <tbody class="bottomHolder">
-          </tbody>
+          <tbody class="hyperlinkHolder"></tbody>
+          <tbody class="socialMediaHolder"></tbody>
+          <tbody class="bottomHolder"></tbody>
           </table>
       </section>
 
@@ -369,6 +379,26 @@
     <script src="./sigfiles/jquery-ui.js"></script>
     <script src="./sigfiles/jquery.form.js"></script>
     <script src="./sigfiles/custom.js"></script>
+    <script type="text/javascript">
+        // This code keeps the textarea for custom statements under a certain number of rows long.
+        // Taken from https://stackoverflow.com/questions/556767/limiting-number-of-lines-in-textarea
+        //Limit to # of rows in textarea or arbitrary # of rows
+        $('#customStatements').bind('change keyup', function(event) {
+          //Option 1: Limit to # of rows in textarea
+          rows = $(this).attr('rows');
+          //Optiion 2: Limit to arbitrary # of rows
+          // rows = 6;
+
+          var value = '';
+          var splitval = $(this).val().split("\n");
+
+          for(var a=0;a<rows && typeof splitval[a] != 'undefined';a++) {
+            if(a>0) value += "\n";
+            value += splitval[a];
+          }
+          $(this).val(value);
+        });
+    </script>
     <script type="text/javascript">
       $(document).ready(function() {
         $('.bottomSelection').on('click', function() {
