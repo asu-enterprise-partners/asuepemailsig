@@ -217,6 +217,18 @@ function destroyElm2(elm) {
     } else if ($('#subsidiary').val() == 'ecasu'){
       // console.log('ecasu');
       $('#preSubsidiary').html('<strong>ECASU</strong>');
+    } else if ($('#subsidiary').val() == 'asufamerican'){
+      // console.log('asufamerican');
+      $('#preSubsidiary').html('<strong>ASU Foundation for A New American University</strong>');
+    } else if ($('#subsidiary').val() == 'realmspark'){
+      // console.log('realmspark');
+      $('#preSubsidiary').html('<strong>RealmSpark</strong>');
+    } else if ($('#subsidiary').val() == 'milo'){
+      // console.log('milo');
+      $('#preSubsidiary').html('<strong>Milo Space Science Institute</strong>');
+    } else if ($('#subsidiary').val() == 'outreach'){
+      // console.log('outreach');
+      $('#preSubsidiary').html('<strong>ASU Outreach Hub</strong>');
     }
 
     // $('#preSubsidiary').html('$('#subsidiary option:selected').text()');
