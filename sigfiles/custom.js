@@ -362,10 +362,12 @@ function updateAll() {
     }
 
     const cfCheckbox = document.getElementById("cfCheckbox").checked;
-    if (cfCheckbox) {
-      document.getElementById("preWeb").innerHTML +=
-        "<br><span style='color:#000; font-size:8pt; background-color: #ffc627; padding: 2px; font-weight: bold;'>Changing Futures: From Arizona. For the world.</span>";
-    }
+    console.log(cfCheckbox);
+
+    // if (cfCheckbox) {
+    //   document.getElementById("preWeb").innerHTML +=
+    //     "<br><span style='color:#000; font-size:8pt; background-color: #ffc627; padding: 2px; font-weight: bold;'>Changing Futures: From Arizona. For the world.</span>";
+    // }
 
     /*if($('#addLine1').val() != '' || $('#addLine2').val() != '' || $('#addLine3').val() != '') {
     var val = '<tr height="0"><td align="left"></td></tr>';
@@ -417,6 +419,11 @@ function updateAll() {
         "</td>" +
         "</tr>";
       $("#addressPO").append(val);
+    }
+    if (cfCheckbox) {
+      var val =
+        "<span style='color:#000; font-size:8pt; background-color: #ffc627; padding: 2px; font-weight: bold;'>Changing Futures: From Arizona. For the world.</span>";
+      $("#cfContent").append(val);
     }
 
     let customStatementVal = "";
@@ -794,7 +801,6 @@ function createSocialMedia(elm, elm2) {
     '<option value="https://www.facebook.com/asufoundation/">Facebook - ASU Foundation</option>' +
     '<option value="https://www.linkedin.com/company/asu-foundation-for-a-new-american-university">LinkedIn - ASU Foundation</option>' +
     '<option value="https://twitter.com/asufoundation">@asufoundation</option>' +
-    '<option value="https://twitter.com/rickshangraw">@rickshangraw</option>' +
     '<option value="https://twitter.com/gretchenbuhlig">@gretchenbuhlig</option>';
   // for(let val of options) {
   //   if($.trim(val) === $.trim(elm)) {
