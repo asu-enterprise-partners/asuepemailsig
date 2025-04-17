@@ -237,7 +237,7 @@ function updateAll() {
     $("#address").empty();
     $("#addressPO").empty();
     $("#customStatementsDisplay").empty();
-
+    $("#cfContent").empty();
     $("#preName").html($("#name").val());
     $("#preTitleDept").html($("#titleDept").val());
     $("#preDept").html($("#Dept").val());
@@ -361,9 +361,6 @@ function updateAll() {
       );
     }
 
-    const cfCheckbox = document.getElementById("cfCheckbox").checked;
-    console.log(cfCheckbox);
-
     // if (cfCheckbox) {
     //   document.getElementById("preWeb").innerHTML +=
     //     "<br><span style='color:#000; font-size:8pt; background-color: #ffc627; padding: 2px; font-weight: bold;'>Changing Futures: From Arizona. For the world.</span>";
@@ -420,6 +417,8 @@ function updateAll() {
         "</tr>";
       $("#addressPO").append(val);
     }
+    const cfCheckbox = document.getElementById("cfCheckbox").checked;
+    console.log(cfCheckbox);
     if (cfCheckbox) {
       var val =
         "<span style='color:#000; font-size:8pt; background-color: #ffc627; padding: 2px; font-weight: bold;'>Changing Futures: From Arizona. For the world.</span>";
