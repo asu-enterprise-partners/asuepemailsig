@@ -417,7 +417,7 @@ function updateAll() {
         "</tr>";
       $("#addressPO").append(val);
     }
-    const cfCheckbox = document.getElementById("cfCheckbox").checked;
+    let cfCheckbox = document.getElementById("cfCheckbox").checked;
     console.log(cfCheckbox);
     if (cfCheckbox) {
       var val =
