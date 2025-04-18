@@ -365,7 +365,7 @@ function updateAll() {
     console.log("cf value: " + cfCheckbox);
     if (cfCheckbox) {
       var cfstuff =
-        "<span style='color:#000; font-size:8pt; background-color: #ffc627; padding: 2px; font-weight: bold;'>Changing Futures: From Arizona. For the world.</span>";
+        "<span style='font-size: 8pt; color: #000; background-color: #ffc627; padding: 2px; font-weight: bold;'>Changing Futures: From Arizona. For the world.</span>";
       $("#cfContent").append(cfstuff);
     }
 
