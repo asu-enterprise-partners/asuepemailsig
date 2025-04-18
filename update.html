@@ -34,7 +34,7 @@
       .signature-preview {
         background: #fff;
         padding: 20px;
-        border: 1px solid #ccc;
+        /* border: 1px solid #ccc; */
         /* white-space: pre-wrap; */
       }
       .highlight {
@@ -248,12 +248,12 @@
 <b style="font-size:8pt;">${organization}</b><br><br>
 ${
   officePhone
-    ? `<b style="font-size:8pt;">o:</b> <a href="tel:${officePhone}" style="color: ${brandColor}; font-size:8pt;">${officePhone}</a><br />`
+    ? `<b style="font-size:8pt;">o:</b> <a href="tel:${officePhone}" style="color: ${brandColor}; font-size:8pt;">${officePhone}</a>&nbsp;`
     : ""
 }
 ${
   mobilePhone
-    ? `<b style="font-size:8pt;">c:</b> <a href="tel:${mobilePhone}" style="color: ${brandColor}; font-size:8pt;">${mobilePhone}</a><br />`
+    ? `<b style="font-size:8pt;">c:</b> <a href="tel:${mobilePhone}" style="color: ${brandColor}; font-size:8pt;">${mobilePhone}</a>&nbsp;`
     : ""
 }
 ${
@@ -263,7 +263,7 @@ ${
 }
 <b style="font-size:8pt;">email:</b> <a href="mailto:${email}" style="color:${brandColor}; font-size:8pt;"">${email}</a><br>
 <b style="font-size:8pt;">website:</b> <a href="https://${website}" style="color:${brandColor}; font-size:8pt;"">${website}</a><br><br>
-<span style="font-size:8pt;">${addr1}</span><br><span style="font-size:8pt;">${addr2}</span><br><span style="font-size:8pt;">${addr3}</span><br><br>
+<span style="font-size:8pt;">${addr1} | ${addr2} | ${addr3}</span><br><br>
 <span class="highlight" style="font-size:8pt;">${slogan}</span><br>
 <span style="font-size:8pt;">${custom}</span>
     `.trim();
