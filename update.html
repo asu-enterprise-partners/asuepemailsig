@@ -135,7 +135,7 @@
         <option value="ECASU">ECASU</option>
         <option value="Skysong Innovations">Skysong Innovations</option>
         <option
-          value="University Realty<br />Advancing the Arizona State University Knowledge Enterprise<br /><em>An Affiliate of the ASU Foundation for A New American University</em>"
+          value="University Realty<br /><span style='font-weight: 100 !important;'>Advancing the Arizona State University Knowledge Enterprise<br /><em>An Affiliate of the ASU Foundation for A New American University</em></optionspan>"
         >
           University Realty
         </option>
@@ -147,6 +147,9 @@
           Milo Space Science Institute
         </option>
         <option value="ASU Outreach Hub">ASU Outreach Hub</option>
+        <option value="Arizona State University">
+          Arizona State University
+        </option>
       </select>
 
       <label>Office phone</label>
@@ -159,7 +162,7 @@
       <input type="text" id="fax" />
 
       <label>Email address</label>
-      <input type="text" id="email" />
+      <input type="text" id="email" placeholder="sparky@asuep.org" />
 
       <label>Website</label>
       <select id="website">
@@ -173,6 +176,7 @@
         <option value="scaleu.org">scaleu.org</option>
         <option value="skysonginnovations.com">skysonginnovations.com</option>
         <option value="universityrealtyllc.org">universityrealtyllc.org</option>
+        <option value="asu.edu">asu.edu</option>
       </select>
 
       <label>Mailing address</label>
@@ -229,7 +233,8 @@
         const officePhone = document.getElementById("officePhone").value;
         const mobilePhone = document.getElementById("mobilePhone").value;
         const fax = document.getElementById("fax").value;
-        const email = document.getElementById("email").value;
+        const email =
+          document.getElementById("email").value || "sparky@asuep.org";
         const website = document.getElementById("website").value;
         const addr1 = document.getElementById("addr1").value || "PO Box 2260";
         const addr2 = document.getElementById("addr2").value || "Tempe, AZ";
