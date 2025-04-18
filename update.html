@@ -140,7 +140,6 @@
     <div class="preview-section">
       <h2><span class="highlight">Your live signature preview</span></h2>
       <div class="signature-preview" id="signatureOutput"></div>
-      <!-- <button class="copy-btn" onclick="downloadRTF()">Export to RTF</button> -->
       <button class="copy-btn" onclick="copySignatureHTML()">
         Copy signature preview above to clipboard
       </button>
@@ -224,36 +223,6 @@ ${
         navigator.clipboard.writeText(html).then(() => {
           alert("Signature HTML copied to clipboard!");
         });
-      }
-
-      function downloadRTF() {
-        const html = document.getElementById("signatureOutput").innerHTML;
-        const rtfHeader = `{\\rtf1\\ansi\\deff0 {\\fonttbl {\\f0 Arial;}}\n`;
-        const rtfContent = html
-          .replace(/<br\s*\/?>/gi, "\\line ")
-          .replace(/<b>(.*?)<\/b>/gi, "{\\b $1}")
-          .replace(/<span style="color: #d40000">(.*?)<\/span>/gi, "{\\cf1 $1}")
-          .replace(/<span style="color: #cc33cc">(.*?)<\/span>/gi, "{\\cf2 $1}")
-          .replace(
-            /<span class="highlight">(.*?)<\/span>/gi,
-            "{\\highlight1\\b $1}"
-          )
-          .replace(/<a href="mailto:(.*?)".*?>(.*?)<\/a>/gi, "$2 <$1>")
-          .replace(/<a href="https:\/\/(.*?)".*?>(.*?)<\/a>/gi, "$2")
-          .replace(/<\/?[^>]+(>|$)/g, "") // strip remaining tags
-          .replace(/&nbsp;/g, " ");
-
-        const rtfColors =
-          "{\\colortbl;\\red212\\green0\\blue0;\\red204\\green51\\blue204;\\highlight\\red255\\green204\\blue0;}";
-        const rtf = rtfHeader + rtfColors + "\n" + rtfContent + "}";
-
-        const blob = new Blob([rtf], { type: "application/rtf" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "email_signature.rtf";
-        a.click();
-        URL.revokeObjectURL(url);
       }
 
       // Init preview
