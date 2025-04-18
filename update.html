@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Email Signature Generator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        gap: 40px;
+        padding: 40px;
+        background: #f9f9f9;
+      }
+      .form-section,
+      .preview-section {
+        flex: 1;
+      }
+      input,
+      textarea,
+      select {
+        width: 100%;
+        margin: 6px 0 14px;
+        padding: 8px;
+        font-size: 14px;
+      }
+      label {
+        font-weight: bold;
+      }
+      .signature-preview {
+        background: #fff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        white-space: pre-wrap;
+      }
+      .highlight {
+        background: #ffc620;
+        font-weight: bold;
+      }
+      .output-html {
+        margin-top: 20px;
+        font-size: 14px;
+        background: #eaeaea;
+        padding: 10px;
+        white-space: pre-wrap;
+        border: 1px dashed #666;
+      }
+      .copy-btn {
+        margin: 10px 10px 10px 0;
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+      .title-group {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-section">
+      <h2>Enter contact details below:</h2>
+      <label>Full Name</label>
+      <input type="text" id="fullName" placeholder="Mister Sparky" />
+
+      <label>Title(s)</label>
+      <div id="titlesContainer">
+        <div class="title-group">
+          <input type="text" class="titleInput" />
+          <button onclick="addTitle()">+</button>
+        </div>
+      </div>
+
+      <label>Department</label>
+      <input type="text" id="department" />
+
+      <label>Organization</label>
+      <select id="organization">
+        <option value="ASU Enterprise Partners">ASU Enterprise Partners</option>
+        <option value="ASU Foundation">ASU Foundation</option>
+        <option value="ASURE">ASURE</option>
+        <option value="ECASU">ECASU</option>
+        <option value="Skysong Innovations">Skysong Innovations</option>
+        <option value="University Realty">University Realty</option>
+        <option value="ASU Foundation for A New American University">
+          ASU Foundation for A New American University
+        </option>
+        <option value="RealmSpark">RealmSpark</option>
+        <option value="Milo Space Science Institute">
+          Milo Space Science Institute
+        </option>
+        <option value="ASU Outreach Hub">ASU Outreach Hub</option>
+      </select>
+
+      <label>Office Phone</label>
+      <input type="text" id="officePhone" />
+
+      <label>Mobile Phone</label>
+      <input type="text" id="mobilePhone" />
+
+      <label>Fax</label>
+      <input type="text" id="fax" />
+
+      <label>Email</label>
+      <input type="text" id="email" />
+
+      <label>Website</label>
+      <select id="website">
+        <option value="asuchangingfutures.org">asuchangingfutures.org</option>
+        <option value="asuenterprisepartners.org">
+          asuenterprisepartners.org
+        </option>
+        <option value="asufoundation.org">asufoundation.org</option>
+        <option value="asure.asu.edu">asure.asu.edu</option>
+        <option value="investu.org">investu.org</option>
+        <option value="scaleu.org">scaleu.org</option>
+        <option value="skysonginnovations.com">skysonginnovations.com</option>
+        <option value="universityrealtyllc.org">universityrealtyllc.org</option>
+      </select>
+
+      <label>Mailing Address</label>
+      <input type="text" id="addr1" placeholder="PO Box 2260" />
+      <input type="text" id="addr2" placeholder="Tempe, AZ" />
+      <input type="text" id="addr3" placeholder="85280-2260" />
+
+      <label>Slogan</label>
+      <input
+        type="text"
+        id="slogan"
+        placeholder="Changing Futures: From Arizona. For the world."
+      />
+
+      <label>Custom Statement (optional)</label>
+      <textarea id="custom" rows="2"></textarea>
+    </div>
+
+    <div class="preview-section">
+      <h2>Your live signature preview:</h2>
+      <div class="signature-preview" id="signatureOutput"></div>
+      <button class="copy-btn" onclick="copyHTML()">Copy HTML</button>
+      <!-- <button class="copy-btn" onclick="downloadRTF()">Export to RTF</button> -->
+      <button class="copy-btn" onclick="copySignatureHTML()">
+        Copy Signature Preview
+      </button>
+      <div class="output-html" id="htmlOutput"></div>
+    </div>
+
+    <script>
+      const inputs = document.querySelectorAll("input, textarea, select");
+      inputs.forEach((input) =>
+        input.addEventListener("input", updateSignature)
+      );
+
+      function addTitle() {
+        const container = document.getElementById("titlesContainer");
+        const div = document.createElement("div");
+        div.className = "title-group";
+        div.innerHTML =
+          '<input type="text" class="titleInput"><button onclick="this.parentNode.remove(); updateSignature();">–</button>';
+        container.appendChild(div);
+        div.querySelector("input").addEventListener("input", updateSignature);
+      }
+
+      function updateSignature() {
+        const fullName =
+          document.getElementById("fullName").value || "Mister Sparky";
+        const titles = [...document.querySelectorAll(".titleInput")]
+          .map((el) => el.value)
+          .filter(Boolean)
+          .join("<br>");
+        const department = document.getElementById("department").value;
+        const organization = document.getElementById("organization").value;
+        const officePhone = document.getElementById("officePhone").value;
+        const mobilePhone = document.getElementById("mobilePhone").value;
+        const fax = document.getElementById("fax").value;
+        const email = document.getElementById("email").value;
+        const website = document.getElementById("website").value;
+        const addr1 = document.getElementById("addr1").value || "PO Box 2260";
+        const addr2 = document.getElementById("addr2").value || "Tempe, AZ";
+        const addr3 = document.getElementById("addr3").value || "85280-2260";
+        const slogan =
+          document.getElementById("slogan").value ||
+          "Changing Futures: From Arizona. For the world.";
+        const custom = document.getElementById("custom").value;
+
+        const brandColor = "#8c1d40";
+
+        const html = `
+<b>${fullName}</b><br>
+${titles}<br>
+${department}<br>
+<b>${organization}</b><br><br>
+${
+  officePhone
+    ? `<b>o:</b> <a href="tel:${officePhone}" style="color: ${brandColor}">${officePhone}</a><br />`
+    : ""
+}
+${
+  mobilePhone
+    ? `<b>c:</b> <a href="tel:${mobilePhone}" style="color: ${brandColor}">${mobilePhone}</a><br />`
+    : ""
+}
+${
+  fax
+    ? `<b>f:</b> <a href="tel:${fax}" style="color: ${brandColor}">${fax}</a><br />`
+    : ""
+}
+<b>email:</b> <a href="mailto:${email}" style="color:${brandColor}">${email}</a><br>
+<b>website:</b> <a href="https://${website}" style="color:${brandColor}">${website}</a><br><br>
+${addr1}<br>${addr2}<br>${addr3}<br><br>
+<span class="highlight">${slogan}</span><br>
+${custom}
+    `.trim();
+
+        document.getElementById("signatureOutput").innerHTML = html;
+        document.getElementById("htmlOutput").textContent = html;
+      }
+
+      function copyHTML() {
+        const html = document.getElementById("htmlOutput").textContent;
+        navigator.clipboard.writeText(html).then(() => {
+          alert("Signature HTML copied to clipboard!");
+        });
+      }
+
+      function downloadRTF() {
+        const html = document.getElementById("signatureOutput").innerHTML;
+        const rtfHeader = `{\\rtf1\\ansi\\deff0 {\\fonttbl {\\f0 Arial;}}\n`;
+        const rtfContent = html
+          .replace(/<br\s*\/?>/gi, "\\line ")
+          .replace(/<b>(.*?)<\/b>/gi, "{\\b $1}")
+          .replace(/<span style="color: #d40000">(.*?)<\/span>/gi, "{\\cf1 $1}")
+          .replace(/<span style="color: #cc33cc">(.*?)<\/span>/gi, "{\\cf2 $1}")
+          .replace(
+            /<span class="highlight">(.*?)<\/span>/gi,
+            "{\\highlight1\\b $1}"
+          )
+          .replace(/<a href="mailto:(.*?)".*?>(.*?)<\/a>/gi, "$2 <$1>")
+          .replace(/<a href="https:\/\/(.*?)".*?>(.*?)<\/a>/gi, "$2")
+          .replace(/<\/?[^>]+(>|$)/g, "") // strip remaining tags
+          .replace(/&nbsp;/g, " ");
+
+        const rtfColors =
+          "{\\colortbl;\\red212\\green0\\blue0;\\red204\\green51\\blue204;\\highlight\\red255\\green204\\blue0;}";
+        const rtf = rtfHeader + rtfColors + "\n" + rtfContent + "}";
+
+        const blob = new Blob([rtf], { type: "application/rtf" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "email_signature.rtf";
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+
+      // Init preview
+      updateSignature();
+
+      function copySignatureHTML() {
+        const signature = document.getElementById("signatureOutput");
+        const range = document.createRange();
+        range.selectNode(signature);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        try {
+          const success = document.execCommand("copy");
+          if (success) alert("Signature copied to clipboard!");
+          else alert("Copy failed. Please try manually.");
+        } catch (err) {
+          alert("Error copying signature.");
+        }
+        selection.removeAllRanges();
+      }
+    </script>
+  </body>
+</html>
