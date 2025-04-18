@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Email signature generator</title>
     <style>
       body {
         font-family: Arial, sans-serif;
         display: flex;
         flex-direction: row;
+        flex-wrap: nowrap;
         gap: 40px;
         padding: 40px;
         background: #f9f9f9;
-        flex-wrap: wrap;
+        box-sizing: border-box;
       }
-
       .form-section,
       .preview-section {
-        flex: 1;
+        flex: 1 1 50%;
+        min-width: 0;
       }
+
       input,
       textarea,
       select {
@@ -61,8 +63,14 @@
       @media (max-width: 768px) {
         body {
           flex-direction: column;
-          padding: 20px;
           gap: 20px;
+          padding: 20px;
+        }
+
+        .form-section,
+        .preview-section {
+          flex: 1 1 100%;
+          min-width: 100%;
         }
 
         h2 {
@@ -82,15 +90,12 @@
           padding: 12px;
         }
 
-        .signature-preview {
-          overflow-x: auto;
-          word-wrap: break-word;
-          font-size: 14px;
-        }
-
+        .signature-preview,
         .output-html {
-          font-size: 13px;
+          word-break: break-word;
+          overflow-wrap: anywhere;
           overflow-x: auto;
+          font-size: 14px;
         }
 
         .title-group {
