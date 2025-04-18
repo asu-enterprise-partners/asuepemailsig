@@ -361,28 +361,14 @@ function updateAll() {
       );
     }
 
-    // if (cfCheckbox) {
-    //   document.getElementById("preWeb").innerHTML +=
-    //     "<br><span style='color:#000; font-size:8pt; background-color: #ffc627; padding: 2px; font-weight: bold;'>Changing Futures: From Arizona. For the world.</span>";
-    // }
-
-    /*if($('#addLine1').val() != '' || $('#addLine2').val() != '' || $('#addLine3').val() != '') {
-    var val = '<tr height="0"><td align="left"></td></tr>';
-      $('#address').append(val);
+    let cfCheckbox = document.getElementById("cfCheckbox").checked;
+    console.log(cfCheckbox);
+    if (cfCheckbox) {
+      var cfstuff =
+        "<span style='color:#000; font-size:8pt; background-color: #ffc627; padding: 2px; font-weight: bold;'>Changing Futures: From Arizona. For the world.</span>";
+      $("#cfContent").append(cfstuff);
     }
-    if($('#addLine1').val() != '') {
-    var val = '<tr>' +
-        '<td>'+
-          '<span style="color:#000; font-size:8pt; font-weight:bold;">'+$('#addLine1').val()+' '+$('#addLine2').val()+' '+$('#addLine3').val()+'</span>'+
-        '</td>'+
-      '</tr>';
-      $('#address').append(val);
-    }*/
 
-    // if($('#addLine11').val() != '' || $('#addLine22').val() != '' || $('#addLine33').val() != '') {
-    // var val = '<tr height="0"><td align="left"></td></tr>';
-    //  $('#addressPO').append(val);
-    // }
     if (
       $("#addLine11").val() == "" &&
       $("#addLine22").val() == "" &&
@@ -416,13 +402,6 @@ function updateAll() {
         "</td>" +
         "</tr>";
       $("#addressPO").append(val);
-    }
-    let cfCheckbox = document.getElementById("cfCheckbox").checked;
-    console.log(cfCheckbox);
-    if (cfCheckbox) {
-      var val =
-        "<span style='color:#000; font-size:8pt; background-color: #ffc627; padding: 2px; font-weight: bold;'>Changing Futures: From Arizona. For the world.</span>";
-      $("#cfContent").append(val);
     }
 
     let customStatementVal = "";
@@ -642,17 +621,17 @@ function saveJSON() {
   $("#jsonData").val(myJsonString);
   $("#userName").val($("#name").val());
 }
-function doData() {
-  var name = $("#name").val();
-  var dept = $("#titleDept").val();
-  $.post(
-    "lib/processSaveData.php",
-    { name: name, dept: dept },
-    function (data) {
-      console.log(data);
-    }
-  );
-}
+// function doData() {
+//   var name = $("#name").val();
+//   var dept = $("#titleDept").val();
+//   $.post(
+//     "lib/processSaveData.php",
+//     { name: name, dept: dept },
+//     function (data) {
+//       console.log(data);
+//     }
+//   );
+// }
 function fillData() {
   jsonObj = [];
 
