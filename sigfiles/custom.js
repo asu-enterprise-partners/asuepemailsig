@@ -362,7 +362,7 @@ function updateAll() {
     }
 
     let cfCheckbox = document.getElementById("cfCheckbox").checked;
-    console.log(cfCheckbox);
+    console.log("cf value: " + cfCheckbox);
     if (cfCheckbox) {
       var cfstuff =
         "<span style='color:#000; font-size:8pt; background-color: #ffc627; padding: 2px; font-weight: bold;'>Changing Futures: From Arizona. For the world.</span>";
