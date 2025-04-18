@@ -2,18 +2,23 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Email signature generator</title>
+    <title>ASUEP email signature generator</title>
     <style>
       body {
         font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f9f9f9;
+      }
+
+      .content-wrapper {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         gap: 40px;
         padding: 40px;
-        background: #f9f9f9;
         box-sizing: border-box;
       }
+
       .form-section,
       .preview-section {
         flex: 1 1 50%;
@@ -61,7 +66,7 @@
       }
 
       @media (max-width: 768px) {
-        body {
+        .content-wrapper {
           flex-direction: column;
           gap: 20px;
           padding: 20px;
@@ -108,101 +113,146 @@
           margin-top: 5px;
         }
       }
+
+      .page-header {
+        width: 100%;
+        padding: 20px 40px;
+        box-sizing: border-box;
+      }
+
+      .page-header h1 {
+        margin: 0;
+        font-size: 26px;
+        /* color: #8c1d40; */
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Mobile adjustments */
+      @media (max-width: 768px) {
+        .page-header {
+          padding: 16px 20px;
+        }
+
+        .page-header h1 {
+          font-size: 22px;
+          /* text-align: center; */
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="form-section">
-      <h2><span class="highlight">Enter contact details below</span></h2>
-      <label>Full Name</label>
-      <input type="text" id="fullName" placeholder="Mister Sparky" />
+    <header class="page-header">
+      <img
+        width="200px"
+        alt="ASU Logo"
+        src="./sigfiles/asu_enterpartners_horiz_rgb_maroongold_150ppi_0.png"
+      />
+      <h1>
+        <span style="background-color: #ffc627; padding: 4px"
+          >ASU EP Email Signature Generator</span
+        >
+      </h1>
+    </header>
 
-      <label>Title(s)</label>
-      <div id="titlesContainer">
-        <div class="title-group">
-          <input type="text" class="titleInput" />
-          <button onclick="addTitle()">+</button>
+    <div class="content-wrapper">
+      <div class="form-section">
+        <h2><span class="highlight">Enter contact details below</span></h2>
+        <label>Full Name</label>
+        <input type="text" id="fullName" placeholder="Mister Sparky" />
+
+        <label>Title(s)</label>
+        <div id="titlesContainer">
+          <div class="title-group">
+            <input type="text" class="titleInput" />
+            <button onclick="addTitle()">+</button>
+          </div>
         </div>
+
+        <label>Department</label>
+        <input type="text" id="department" />
+
+        <label>Organization</label>
+        <select id="organization">
+          <option value="ASU Enterprise Partners">
+            ASU Enterprise Partners
+          </option>
+          <option value="ASU Foundation">ASU Foundation</option>
+          <option value="ASURE">ASURE</option>
+          <option value="ECASU">ECASU</option>
+          <option value="Skysong Innovations">Skysong Innovations</option>
+          <option
+            value="University Realty<br /><span style='font-weight: 100 !important;'>Advancing the Arizona State University Knowledge Enterprise<br /><em>An Affiliate of the ASU Foundation for A New American University</em></optionspan>"
+          >
+            University Realty
+          </option>
+          <option value="ASU Foundation for A New American University">
+            ASU Foundation for A New American University
+          </option>
+          <option value="RealmSpark">RealmSpark</option>
+          <option value="Milo Space Science Institute">
+            Milo Space Science Institute
+          </option>
+          <option value="ASU Outreach Hub">ASU Outreach Hub</option>
+          <option value="Arizona State University">
+            Arizona State University
+          </option>
+        </select>
+
+        <label>Office phone</label>
+        <input type="text" id="officePhone" />
+
+        <label>Mobile phone</label>
+        <input type="text" id="mobilePhone" />
+
+        <label>Fax</label>
+        <input type="text" id="fax" />
+
+        <label>Email address</label>
+        <input type="text" id="email" placeholder="sparky@asuep.org" />
+
+        <label>Website</label>
+        <select id="website">
+          <option value="asuchangingfutures.org">asuchangingfutures.org</option>
+          <option value="asuenterprisepartners.org">
+            asuenterprisepartners.org
+          </option>
+          <option value="asufoundation.org">asufoundation.org</option>
+          <option value="asure.asu.edu">asure.asu.edu</option>
+          <option value="investu.org">investu.org</option>
+          <option value="scaleu.org">scaleu.org</option>
+          <option value="skysonginnovations.com">skysonginnovations.com</option>
+          <option value="universityrealtyllc.org">
+            universityrealtyllc.org
+          </option>
+          <option value="asu.edu">asu.edu</option>
+        </select>
+
+        <label>Mailing address</label>
+        <input type="text" id="addr1" placeholder="PO Box 2260" />
+        <input type="text" id="addr2" placeholder="Tempe, AZ" />
+        <input type="text" id="addr3" placeholder="85280-2260" />
+
+        <label>Slogan (will be highlighted in gold)</label>
+        <input
+          type="text"
+          id="slogan"
+          placeholder="Changing Futures: From Arizona. For the world."
+        />
+
+        <label>Optional custom statement</label>
+        <textarea id="custom" rows="2"></textarea>
       </div>
 
-      <label>Department</label>
-      <input type="text" id="department" />
-
-      <label>Organization</label>
-      <select id="organization">
-        <option value="ASU Enterprise Partners">ASU Enterprise Partners</option>
-        <option value="ASU Foundation">ASU Foundation</option>
-        <option value="ASURE">ASURE</option>
-        <option value="ECASU">ECASU</option>
-        <option value="Skysong Innovations">Skysong Innovations</option>
-        <option
-          value="University Realty<br /><span style='font-weight: 100 !important;'>Advancing the Arizona State University Knowledge Enterprise<br /><em>An Affiliate of the ASU Foundation for A New American University</em></optionspan>"
-        >
-          University Realty
-        </option>
-        <option value="ASU Foundation for A New American University">
-          ASU Foundation for A New American University
-        </option>
-        <option value="RealmSpark">RealmSpark</option>
-        <option value="Milo Space Science Institute">
-          Milo Space Science Institute
-        </option>
-        <option value="ASU Outreach Hub">ASU Outreach Hub</option>
-        <option value="Arizona State University">
-          Arizona State University
-        </option>
-      </select>
-
-      <label>Office phone</label>
-      <input type="text" id="officePhone" />
-
-      <label>Mobile phone</label>
-      <input type="text" id="mobilePhone" />
-
-      <label>Fax</label>
-      <input type="text" id="fax" />
-
-      <label>Email address</label>
-      <input type="text" id="email" placeholder="sparky@asuep.org" />
-
-      <label>Website</label>
-      <select id="website">
-        <option value="asuchangingfutures.org">asuchangingfutures.org</option>
-        <option value="asuenterprisepartners.org">
-          asuenterprisepartners.org
-        </option>
-        <option value="asufoundation.org">asufoundation.org</option>
-        <option value="asure.asu.edu">asure.asu.edu</option>
-        <option value="investu.org">investu.org</option>
-        <option value="scaleu.org">scaleu.org</option>
-        <option value="skysonginnovations.com">skysonginnovations.com</option>
-        <option value="universityrealtyllc.org">universityrealtyllc.org</option>
-        <option value="asu.edu">asu.edu</option>
-      </select>
-
-      <label>Mailing address</label>
-      <input type="text" id="addr1" placeholder="PO Box 2260" />
-      <input type="text" id="addr2" placeholder="Tempe, AZ" />
-      <input type="text" id="addr3" placeholder="85280-2260" />
-
-      <label>Slogan (will be highlighted in gold)</label>
-      <input
-        type="text"
-        id="slogan"
-        placeholder="Changing Futures: From Arizona. For the world."
-      />
-
-      <label>Optional custom statement</label>
-      <textarea id="custom" rows="2"></textarea>
-    </div>
-
-    <div class="preview-section">
-      <h2><span class="highlight">Your live signature preview</span></h2>
-      <div class="signature-preview" id="signatureOutput"></div>
-      <button class="copy-btn" onclick="copySignatureHTML()">
-        Copy signature preview above to clipboard
-      </button>
-      <button class="copy-btn" onclick="copyHTML()">Copy HTML</button>
-      <div class="output-html" id="htmlOutput"></div>
+      <div class="preview-section">
+        <h2><span class="highlight">Your live signature preview</span></h2>
+        <div class="signature-preview" id="signatureOutput"></div>
+        <button class="copy-btn" onclick="copySignatureHTML()">
+          Copy signature preview above to clipboard
+        </button>
+        <button class="copy-btn" onclick="copyHTML()">Copy HTML</button>
+        <div class="output-html" id="htmlOutput"></div>
+      </div>
     </div>
 
     <script>
