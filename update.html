@@ -58,7 +58,7 @@
   </head>
   <body>
     <div class="form-section">
-      <h2>Enter contact details below:</h2>
+      <h2><span class="highlight">Enter contact details below</span></h2>
       <label>Full Name</label>
       <input type="text" id="fullName" placeholder="Mister Sparky" />
 
@@ -138,13 +138,13 @@
     </div>
 
     <div class="preview-section">
-      <h2>Your live signature preview:</h2>
+      <h2><span class="highlight">Your live signature preview</span></h2>
       <div class="signature-preview" id="signatureOutput"></div>
-      <button class="copy-btn" onclick="copyHTML()">Copy HTML</button>
       <!-- <button class="copy-btn" onclick="downloadRTF()">Export to RTF</button> -->
       <button class="copy-btn" onclick="copySignatureHTML()">
-        Copy signature preview to clipboard
+        Copy signature preview above to clipboard
       </button>
+      <button class="copy-btn" onclick="copyHTML()">Copy HTML</button>
       <div class="output-html" id="htmlOutput"></div>
     </div>
 
@@ -189,30 +189,30 @@
         const brandColor = "#8c1d40";
 
         const html = `
-<b>${fullName}</b><br>
-${titles}<br>
-${department}<br>
-<b>${organization}</b><br><br>
+<b style="font-size:8pt;">${fullName}</b><br>
+<span style="font-size:8pt;">${titles}</span><br>
+<span style="font-size:8pt;">${department}</span><br>
+<b style="font-size:8pt;">${organization}</b><br><br>
 ${
   officePhone
-    ? `<b>o:</b> <a href="tel:${officePhone}" style="color: ${brandColor}">${officePhone}</a><br />`
+    ? `<b style="font-size:8pt;">o:</b> <a href="tel:${officePhone}" style="color: ${brandColor}; font-size:8pt;">${officePhone}</a><br />`
     : ""
 }
 ${
   mobilePhone
-    ? `<b>c:</b> <a href="tel:${mobilePhone}" style="color: ${brandColor}">${mobilePhone}</a><br />`
+    ? `<b style="font-size:8pt;">c:</b> <a href="tel:${mobilePhone}" style="color: ${brandColor}; font-size:8pt;">${mobilePhone}</a><br />`
     : ""
 }
 ${
   fax
-    ? `<b>f:</b> <a href="tel:${fax}" style="color: ${brandColor}">${fax}</a><br />`
+    ? `<b style="font-size:8pt;">f:</b> <a href="tel:${fax}" style="color: ${brandColor}; font-size:8pt;">${fax}</a><br />`
     : ""
 }
-<b>email:</b> <a href="mailto:${email}" style="color:${brandColor}">${email}</a><br>
-<b>website:</b> <a href="https://${website}" style="color:${brandColor}">${website}</a><br><br>
-${addr1}<br>${addr2}<br>${addr3}<br><br>
-<span class="highlight">${slogan}</span><br>
-${custom}
+<b style="font-size:8pt;">email:</b> <a href="mailto:${email}" style="color:${brandColor}; font-size:8pt;"">${email}</a><br>
+<b style="font-size:8pt;">website:</b> <a href="https://${website}" style="color:${brandColor}; font-size:8pt;"">${website}</a><br><br>
+<span style="font-size:8pt;">${addr1}</span><br><span style="font-size:8pt;">${addr2}</span><br><span style="font-size:8pt;">${addr3}</span><br><br>
+<span class="highlight" style="font-size:8pt;">${slogan}</span><br>
+<span style="font-size:8pt;">${custom}</span>
     `.trim();
 
         document.getElementById("signatureOutput").innerHTML = html;
