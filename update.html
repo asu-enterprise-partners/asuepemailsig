@@ -38,7 +38,8 @@
       }
       .signature-preview {
         background: #fff;
-        padding: 20px;
+        /* padding: 20px; */
+        line-height: 0.8rem;
         /* border: 1px solid #ccc; */
         /* white-space: pre-wrap; */
       }
@@ -248,10 +249,10 @@
         <h2><span class="highlight">Your live signature preview</span></h2>
         <div class="signature-preview" id="signatureOutput"></div>
         <button class="copy-btn" onclick="copySignatureHTML()">
-          Copy signature preview above to clipboard
+          Copy signature preview to clipboard
         </button>
-        <button class="copy-btn" onclick="copyHTML()">Copy HTML</button>
-        <div class="output-html" id="htmlOutput"></div>
+        <!-- <button class="copy-btn" onclick="copyHTML()">Copy HTML</button> -->
+        <!-- <div class="output-html" id="htmlOutput"></div> -->
       </div>
     </div>
 
@@ -297,38 +298,40 @@
         const brandColor = "#8c1d40";
 
         const html = `
-<b style="font-size:8pt;">${fullName}</b><br>
-<span style="font-size:8pt;">${titles}</span><br>
-<span style="font-size:8pt;">${department}</span><br>
-<b style="font-size:8pt;">${organization}</b><br><br>
+<b style="font-size:8pt; line-height: .8rem;">${fullName}</b><br>
+<span style="font-size:8pt; line-height: .8rem;">${titles}</span><br>
+<span style="font-size:8pt; line-height: .8rem;">${department}</span><br>
+<b style="font-size:8pt; line-height: .8rem;">${organization}</b><br>
 ${
   officePhone
-    ? `<b style="font-size:8pt;">o:</b> <a href="tel:${officePhone}" style="color: ${brandColor}; font-size:8pt;">${officePhone}</a>&nbsp;`
+    ? `<b style="font-size:8pt; line-height: .8rem;">o:</b> <a href="tel:${officePhone}" style="color: ${brandColor}; font-size:8pt; line-height: .8rem;">${officePhone}</a>&nbsp;`
     : ""
 }
 ${
   mobilePhone
-    ? `<b style="font-size:8pt;">c:</b> <a href="tel:${mobilePhone}" style="color: ${brandColor}; font-size:8pt;">${mobilePhone}</a>&nbsp;`
+    ? `<b style="font-size:8pt; line-height: .8rem;">c:</b> <a href="tel:${mobilePhone}" style="color: ${brandColor}; font-size:8pt; line-height: .8rem;">${mobilePhone}</a>&nbsp;`
     : ""
 }
 ${
   fax
-    ? `<b style="font-size:8pt;">f:</b> <a href="tel:${fax}" style="color: ${brandColor}; font-size:8pt;">${fax}</a><br />`
+    ? `<b style="font-size:8pt; line-height: .8rem;">f:</b> <a href="tel:${fax}" style="color: ${brandColor}; font-size:8pt; line-height: .8rem;">${fax}</a><br />`
     : ""
 }
-<br /><b style="font-size:8pt;">email:</b> <a href="mailto:${email}" style="color:${brandColor}; font-size:8pt;"">${email}</a><br>
-<b style="font-size:8pt;">website:</b> <a href="https://${website}" style="color:${brandColor}; font-size:8pt;"">${website}</a><br><br>
-<span style="font-size:8pt;">${addr1} | ${addr2} | ${addr3}</span><br><br>
-<span class="highlight" style="font-size:8pt;">${slogan}</span><br>
-<span style="font-size:8pt;">${custom}</span>
+<b style="font-size:8pt; line-height: .8rem;">email:</b> <a href="mailto:${email}" style="color:${brandColor}; font-size:8pt; line-height: .8rem;"">${email}</a><br>
+<b style="font-size:8pt; line-height: .8rem;">website:</b> <a href="https://${website}" style="color:${brandColor}; font-size:8pt; line-height: .8rem;"">${website}</a><br>
+<span style="font-size:8pt; line-height: .8rem;">${addr1} | ${addr2} | ${addr3}</span><br>
+<span class="highlight" style="font-size:8pt; line-height: .8rem;">${slogan}</span><br>
+<span style="font-size:8pt; line-height: .8rem;">${custom}</span>
     `.trim();
 
         document.getElementById("signatureOutput").innerHTML = html;
-        document.getElementById("htmlOutput").textContent = html;
+        // console.log(html);
+
+        // document.getElementById("htmlOutput").textContent = html;
       }
 
       function copyHTML() {
-        const html = document.getElementById("htmlOutput").textContent;
+        // const html = document.getElementById("htmlOutput").textContent;
         navigator.clipboard.writeText(html).then(() => {
           alert("Signature HTML copied to clipboard!");
         });
@@ -339,6 +342,7 @@ ${
 
       function copySignatureHTML() {
         const signature = document.getElementById("signatureOutput");
+        // console.log(signature);
         const range = document.createRange();
         range.selectNode(signature);
         const selection = window.getSelection();
@@ -347,12 +351,14 @@ ${
 
         try {
           const success = document.execCommand("copy");
-          if (success) alert("Signature copied to clipboard!");
+          if (success)
+            alert("Your signature has been copied to the clipboard!");
           else alert("Copy failed. Please try manually.");
         } catch (err) {
           alert("Error copying signature.");
         }
         selection.removeAllRanges();
+        console.log(signature);
       }
     </script>
   </body>
