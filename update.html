@@ -308,30 +308,30 @@
         const brandColor = "#8c1d40";
 
         const html = `
-<b style="font-size:8pt; line-height: .8rem;">${fullName}</b><br>
-<span style="font-size:8pt; line-height: .8rem;">${titles}</span><br>
-<span style="font-size:8pt; line-height: .8rem;">${department}</span><br>
-<b style="font-size:8pt; line-height: .8rem;">${organization}</b><br>
+<p style="padding: 0; margin: 0; font-size:8pt;"><b>${fullName}</b></p>
+<p style="padding: 0; margin: 0; font-size:8pt;">${titles}</p>
+<p style="padding: 0; margin: 0; font-size:8pt;">${department}</p>
+<p style="padding: 0; margin: 0; font-size:8pt;"><b>${organization}</b></p>
 ${
   officePhone
-    ? `<b style="font-size:8pt; line-height: .8rem;">o:</b> <a href="tel:${officePhone}" style="color: ${brandColor}; font-size:8pt; line-height: .8rem;">${officePhone}</a>&nbsp;`
+    ? `<p style="padding: 0; margin: 0; font-size:8pt;"><b>o:</b> <a href="tel:${officePhone}" style="color: ${brandColor}; font-size:8pt; line-height: .8;">${officePhone}</a>&nbsp;`
     : ""
 }
 ${
   mobilePhone
-    ? `<b style="font-size:8pt; line-height: .8rem;">c:</b> <a href="tel:${mobilePhone}" style="color: ${brandColor}; font-size:8pt; line-height: .8rem;">${mobilePhone}</a>&nbsp;`
+    ? `<b style="font-size:8pt; line-height: .8;">c:</b> <a href="tel:${mobilePhone}" style="color: ${brandColor}; font-size:8pt; line-height: .8;">${mobilePhone}</a>&nbsp;`
     : ""
 }
 ${
   fax
-    ? `<b style="font-size:8pt; line-height: .8rem;">f:</b> <a href="tel:${fax}" style="color: ${brandColor}; font-size:8pt; line-height: .8rem;">${fax}</a><br />`
+    ? `<b style="font-size:8pt; line-height: .8;">f:</b> <a href="tel:${fax}" style="color: ${brandColor}; font-size:8pt; line-height: .8;">${fax}</a></p>`
     : ""
 }
-<b style="font-size:8pt; line-height: .8rem;">email:</b> <a href="mailto:${email}" style="color:${brandColor}; font-size:8pt; line-height: .8rem;"">${email}</a><br>
-<b style="font-size:8pt; line-height: .8rem;">website:</b> <a href="https://${website}" style="color:${brandColor}; font-size:8pt; line-height: .8rem;"">${website}</a><br>
-<span style="font-size:8pt; line-height: .8rem;">${addr1} | ${addr2} | ${addr3}</span><br>
-<span class="highlight" style="font-size:8pt; line-height: .8rem;">${slogan}</span><br>
-<span style="font-size:8pt; line-height: .8rem;">${custom}</span>
+<p style="padding: 0; margin: 0; font-size:8pt;"><b>email:</b> <a href="mailto:${email}" style="color:${brandColor};">${email}</a></p>
+<p style="padding: 0; margin: 0; font-size:8pt;"><b>website:</b> <a href="https://${website}" style="color:${brandColor}; font-size:8pt; line-height: .8;"">${website}</a></p>
+<p style="padding: 0; margin: 0; font-size:8pt;">${addr1} | ${addr2} | ${addr3}</p>
+<p style="padding: 0; margin: 0; font-size:8pt;"><span class="highlight">${slogan}</span></p>
+<p style="padding: 0; margin: 0; font-size:8pt;">${custom}</p>
     `.trim();
 
         document.getElementById("signatureOutput").innerHTML = html;
