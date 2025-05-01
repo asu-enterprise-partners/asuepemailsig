@@ -1,488 +1,215 @@
 <!DOCTYPE html>
-<!-- saved from url=(0031)https://print.asu.edu/EmailSig/ -->
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>ASU EP Email signature generator</title>
-    <link rel="stylesheet" href="./sigfiles/global.css" media="screen" title="no title" charset="utf-8">
-    <link href="./sigfiles/ourstyles.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="./sigfiles/font-awesome.min.css">
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASUEP email signature generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <img
+        width="200px"
+        alt="ASU Logo"
+        src="./asu_enterpartners_horiz_rgb_maroongold_150ppi_0.png"
+      />
+      <h1>
+        <span class="highlight-gold">ASU EP Email Signature Generator</span>
+      </h1>
 
-    <script src="./sigfiles/clipboard.min.js"></script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body style="">
-    <div class="botFoot">
-        <div class="botContainer">
-          <p>
-            Designed and developed by the Print and Imaging Lab, modified by <a href="https://www.asuenterprisepartners.org">ASU Enterprise Partners</a>. <a href="https://github.com/asu-enterprise-partners/asuepemailsig"><i class="fa fa-github" aria-hidden="true"></i></a>
-          </p>
-          <button class="maroon" onclick="updateAll()">Generate</button>
-        </div>
-    </div>
-
-
-    <div class="container">
-      <!-- <div class="" style="float:right; padding:10px; background:#f4f4f4; margin-top:25px;">
-        <strong>Compatible Browsers</strong>
-        <br>
-        <br>
-        <ul>
-          <li>Safari version 10+</li>
-          <li>Google Chrome version 61+</li>
-          <li>Firefox version 55+</li>
-          <li>Microsoft Edge version 15+</li>
-        </ul>
-      </div> -->
-      <img width="200px" alt="ASU Logo" src="./sigfiles/asu_enterpartners_horiz_rgb_maroongold_150ppi_0.png">
-      <h1><span style="background-color: #ffc627; padding: 4px;">ASU EP Email Signature Generator</span></h1>
-
-      <div style="padding-bottom:25px;">
-        <p class="paddingOnTop">To maintain and share a professional and consistent email signature across the enterprise, an email signature generator has been developed for your use. The official email signature follows current best practices, including not adding graphics, as these appear to smartphone users as attachments that must be downloaded.</p>
-        <p class="paddingOnTop">Please be mindful of keeping your email signature concise. It is the responsibility of the employee to ensure signature content meets the standards of ASU Enterprise Partners, as well as their unit or team. Please consult your manager for any other additions beyond those listed below.</p>
-        <p>Try out a new version of this generator <a href="https://asu-enterprise-partners.github.io/asuepemailsig/update.html">here</a>.</p>
-        <p class="paddingOnTop" style="padding-top:10px;"><strong>You MAY:</strong></p>
-        <ul>
-          <li>Add your graduation year after your name (e.g., ’92; note the tail of the apostrophe points to the missing numbers).</li>
-          <li>Add any certifications or advanced degrees you hold (e.g., PhD) if you choose.</li>
-          <li>List your preferred pronouns (use the additional title feature) if you choose.</li>
-          <li>Include the ASU Land Acknowledgement: We acknowledge that Arizona State University is built on the ancestral homelands of Indigenous communities who have inhabited this land for centuries, including the Akimel O’odham (Pima) and Pee Posh (Maricopa) peoples.</li>
-          <li>Include a confidentiality statement: CAUTION: This message may contain confidential and/or privileged communication. Please do not forward without prior permission of sender.</li>
-        </ul>
-        <p class="paddingOnTop" style="padding-top:10px;"><strong>You MAY NOT:</strong></p>
-        <ul>
-          <li>Change the font size, style, color.</li>
-          <li>Add quotes, personal information (e.g., social media), images or other information.</li>
-        </ul>
-        <p>Please consult your manager for any other additions beyond the list above.</p>
-      </div>
-      
-      <p style="font-style: italic;">If this generator is not working properly in your browser, copy, paste and modify the following example:</p>
-      <br class="clear">
-
-      <div style="font-family: Arial, sans-serif; font-size: 10pt; color: #000000; line-height: 1.5; padding: 0 8px;">
-        <div id="" style="font-weight: bold; font-size: 10pt; color: #000000;">Mister Sparky</div>
-        <div id="" style="font-size: 8pt; color: #000;">Director of Marketing</div>
-        <div id="" style="font-size: 8pt; color: #000;">Communications and Marketing</div>
-        <div id="" style="font-size: 8pt; color: #000;"><strong>ASU Outreach Hub</strong></div>
-      
-        <div id="" style="font-size: 8pt; color: #000; margin-top: 8px;">
-          <div>
-            <strong>o:</strong> 
-            <a href="tel:111-222-3333" style="color: #8C1D40; font-size: 8pt; text-decoration: none;">111-222-3333</a>
-            &nbsp;&nbsp;
-            <strong>c:</strong> 
-            <a href="tel:777-888-9999" style="color: #8C1D40; font-size: 8pt; text-decoration: none;">777-888-9999</a>
-          </div>
-          <div>
-            <strong>f:</strong> 
-            <a href="tel:444-555-6666" style="color: #8C1D40; font-size: 8pt; text-decoration: none;">444-555-6666</a>
-          </div>
-        </div>
-      
-        <div id="" style="font-size: 8pt; color: #000;">
-          <strong>email:</strong> 
-          <a href="mailto:misssparky@asuep.org" style="color: #8C1D40; font-size: 8pt; text-decoration: none;">sparky@asuep.org</a>
-        </div>
-      
-        <div id="" style="font-size: 8pt; color: #000;">
-          <strong>website:</strong> 
-          <a href="https://asuchangingfutures.org" style="color: #8C1D40; font-size: 8pt; text-decoration: none;">asuchangingfutures.org</a>
-        </div>
-      
-        <div id="" style="font-size: 8pt; color: #000; font-weight: normal;">
-          PO Box 2260 | Tempe, AZ  |  85280-2260
-        </div>
-        <span style="font-size: 8pt; color: #000; background-color: #ffc627; padding: 2px; font-weight: bold;">Changing Futures: From Arizona. For the world.</span>
-        
-      </div>
-      
-
-      <br class="clear">    
-
-      <p><em>To generate an email signature, please fill in the form below and then click the generate button.</em></p>
-	  <!-- <p>
-	  Generate an Enterprise Marketing Hub-approved on-brand email signature. If you need assistance, please call 480-727-1636 or email print@asu.edu.
-	  </p> -->
-    </div>
-    <div class="container contentHolder">
-
-      <div class="autopop" style="display: none;">
-          <input style="max-width:40%; float:left;" type="text" id="autoPop" name="" placeholder="Auto-populate using your asurite">
-          <button style="float:left; margin-top:12px;" type="button" name="button" onclick="fillIt()">Submit</button>
-          <br class="clear">
-          <br>
-      </div>
-
-    <input type="hidden" id="mainDepartment" value="">
-
-      <div class="inputContainer">
-        <label for="name"> Name (First and Last)</label>
-        <input id="name" type="text" name="name" placeholder="Your name" value="">
-      </div>
-      <br class="clear">
-
-      <div class="inputContainer">
-        <label for="titleDept">Title</label>
-        <input id="titleDept" type="text" name="titleDept" placeholder="Your title" value="">
-      </div>
-      <br class="clear">
-
-      <button class="addTitles" onclick="generateSubTitle()" style="margin: 0 0 0 0 !important;"><i class="fa fa-plus" aria-hidden="true"></i> Add additional title</button>
-      <br class="clear">
-
-      <div id="subDeptHolder" class="ui-sortable">
-
-      </div>
-      <br class="clear">
-
-      <div class="inputContainer">
-        <label for="Dept">Department</label>
-        <input id="Dept" type="text" name="Dept" placeholder="Your department" value="">
-      </div>
-      <br class="clear">
-
-      <div class="inputContainer">
-        <label for="Subsidiary">Organization</label>
-        <!-- <input id="Dept" type="text" name="Dept" placeholder="Your department" value=""> -->
-        <select name="subsidiary" id="subsidiary">
-          <option value="asuep">ASU Enterprise Partners</option>
-          <option value="asuf">ASU Foundation</option>
-          <option value="asure">ASURE</option>
-          <option value="ecasu">ECASU</option>
-          <option value="skysong">Skysong Innovations</option>
-          <option value="realty">University Realty</option>
-
-          <option value="asufamerican">ASU Foundation for A New American University</option>
-          <option value="realmspark">RealmSpark</option>
-          <option value="milo">Milo Space Science Institute</option>
-          <option value="outreach">ASU Outreach Hub</option>
-        </select>
-      </div>
-      <br class="clear">
-
-      <h2 style="padding-top: 20px;"><span style="background-color: #ffc627; padding: 4px;">Contact information</span></h2>
-    <!--  <div class="inputContainer phone">
-        <label for="addLine1"> Address line 1 </label>
-        <input id="addLine1" type="text" name="addLine1" placeholder="Address line 1" value="">
-      </div>
-      <br class="clear">
--->
-    <!--  <div class="inputContainer phone">
-        <label for="addLine2"> Address line 2 </label>
-        <input id="addLine2" type="text" name="addLine2" placeholder="Address line 2">
-      </div>
-      <br class="clear">
--->
-    <!--  <div class="inputContainer phone">
-        <label for="addLine3"> Address line 3 </label>
-        <input id="addLine3" type="text" name="addLine3" placeholder="Address line 3">
-      </div>-->
-      <br class="clear">
-      <br class="clear">
-
-      <!-- <br class="clear">
-      <br> -->
       <p>
-        <em>Phone, FAX and Cell number fields only accept numbers.</em>
+        To maintain and share a professional and consistent email signature
+        across the enterprise, an email signature generator has been developed
+        for your use. The official email signature follows current best
+        practices, including not adding graphics, as these appear to smartphone
+        users as attachments that must be downloaded.
       </p>
+      <p>
+        Please be mindful of keeping your email signature concise. It is the
+        responsibility of the employee to ensure signature content meets the
+        standards of ASU Enterprise Partners, as well as their unit or team.
+        Please consult your manager for any other additions beyond those listed
+        below.
+      </p>
+      <p><strong>You MAY:</strong></p>
+      <ul>
+        <li>
+          Add your graduation year after your name (e.g., ’92; note the tail of
+          the apostrophe points to the missing numbers).
+        </li>
+        <li>
+          Add any certifications or advanced degrees you hold (e.g., PhD) if you
+          choose.
+        </li>
+        <li>
+          List your preferred pronouns (use the additional title feature) if you
+          choose.
+        </li>
+        <li>
+          Include the ASU Land Acknowledgement: We acknowledge that Arizona
+          State University is built on the ancestral homelands of Indigenous
+          communities who have inhabited this land for centuries, including the
+          Akimel O’odham (Pima) and Pee Posh (Maricopa) peoples.
+        </li>
+        <li>
+          Include a confidentiality statement: CAUTION: This message may contain
+          confidential and/or privileged communication. Please do not forward
+          without prior permission of sender.
+        </li>
+      </ul>
+      <p><strong>You MAY NOT:</strong></p>
+      <ul>
+        <li>Change the font size, style, color.</li>
+        <li>
+          Add quotes, personal information (e.g., social media), images or other
+          information.
+        </li>
+      </ul>
+      <p>
+        Please consult your manager for any other additions beyond the list
+        above.
+      </p>
+    </header>
 
-      <!-- <br>
-      <br> -->
-      <div class="inputContainer phone">
-        <label for="phone"> Phone # </label>
-        <input id="phone" type="text" name="phone" placeholder="Your phone #" min="0" value="">
-      </div>
-      <br class="clear">
+    <div class="content-wrapper">
+      <div class="form-section">
+        <h2><span class="highlight-gold">Enter contact details below</span></h2>
+        <label>Full Name</label>
+        <input type="text" id="fullName" placeholder="Mister Sparky" />
 
-      <div class="inputContainer phone">
-        <label for="fax"> FAX # </label>
-        <input id="fax" type="text" name="fax" placeholder="Your FAX #" min="0">
-      </div>
-      <br class="clear">
+        <label>Title(s)</label>
+        <div id="titlesContainer">
+          <div class="title-group">
+            <input type="text" class="titleInput" />
+            <button onclick="addTitle()">+</button>
+          </div>
+        </div>
 
-      <div class="inputContainer phone">
-        <label for="cell"> Cell # </label>
-        <input id="cell" type="text" name="cell" placeholder="Your cell #" min="0">
-      </div>
-      <br class="clear">
-      <br class="clear">
+        <label>Department</label>
+        <input type="text" id="department" />
 
-      <div class="inputContainer phone">
-        <label for="email"> Email Address </label>
-        <input id="email" type="text" name="email" placeholder="Your email" value="">
-      </div>
-      <br class="clear">
+        <label>Organization</label>
+        <select id="organization">
+          <option value="ASU Enterprise Partners">
+            ASU Enterprise Partners
+          </option>
+          <option value="ASURE">ASURE</option>
+          <option value="ECASU">ECASU</option>
+          <option value="Skysong Innovations">Skysong Innovations</option>
+          <option value="University Realty">University Realty</option>
+          <option value="ASU Foundation for A New American University">
+            ASU Foundation for A New American University
+          </option>
+          <option value="RealmSpark">RealmSpark</option>
+          <option value="Milo Space Science Institute">
+            Milo Space Science Institute
+          </option>
+          <option value="ASU Outreach Hub">ASU Outreach Hub</option>
+          <option value="Arizona State University">
+            Arizona State University
+          </option>
+        </select>
 
-      <div class="inputContainer phone">
-        <label for="web"> Website </label>
-        <!-- <input id="web" type="text" name="web" placeholder="Your website"> -->
-        <select name="web" id="web">
+        <label>Office phone</label>
+        <input type="text" id="officePhone" />
+
+        <label>Mobile phone</label>
+        <input type="text" id="mobilePhone" />
+
+        <label>Fax</label>
+        <input type="text" id="fax" />
+
+        <label>Email address</label>
+        <input type="text" id="email" placeholder="sparky@asuep.org" />
+
+        <label>Website</label>
+        <select id="website">
           <option value="asuchangingfutures.org">asuchangingfutures.org</option>
-          <option value="asuenterprisepartners.org">asuenterprisepartners.org</option>
+          <option value="asuenterprisepartners.org">
+            asuenterprisepartners.org
+          </option>
           <option value="asufoundation.org">asufoundation.org</option>
           <option value="asure.asu.edu">asure.asu.edu</option>
           <option value="investu.org">investu.org</option>
           <option value="scaleu.org">scaleu.org</option>
           <option value="skysonginnovations.com">skysonginnovations.com</option>
-          <option value="universityrealtyllc.org">universityrealtyllc.org</option>
+          <option value="universityrealtyllc.org">
+            universityrealtyllc.org
+          </option>
+          <option value="asu.edu">asu.edu</option>
         </select>
+
+        <label>Mailing address</label>
+        <input type="text" id="addr1" placeholder="PO Box 2260" />
+        <input type="text" id="addr2" placeholder="Tempe, AZ" />
+        <input type="text" id="addr3" placeholder="85280-2260" />
+
+        <label>Slogan (will be highlighted in gold)</label>
+        <input
+          type="text"
+          id="slogan"
+          placeholder="Changing Futures: From Arizona. For the world."
+        />
+
+        <label>Optional custom statement</label>
+        <textarea id="custom" rows="2"></textarea>
       </div>
-      <br class="clear">
-      <br class="clear">
 
-      <div class="checkboxContainer">
-        <input type="checkbox" id="cfCheckbox" name="cfCheckbox">
-        <label for="cfCheckbox">Add <span style='color:#000; font-size:8pt; background-color: #ffc627; padding: 2px; font-weight: bold;'>Changing Futures: From Arizona. For the world.</span> ?</label>
+      <div class="preview-section">
+        <h2>
+          <span class="highlight-gold">Your live signature preview below</span>
+        </h2>
+        <div class="signature-preview" id="signatureOutput"></div>
+        <button class="copy-btn btn-gold" onclick="copySignatureHTML()">
+          Copy signature preview to clipboard
+        </button>
+
+        <ul>
+          <li>
+            Review your contact information to ensure everything is correct.
+          </li>
+          <li>
+            Click &ldquo;Copy signature preview to clipboard&rdquo; gold button.
+          </li>
+          <li>
+            Open the web-based version of Outlook:
+            <a href="http://outlook.office.com">outlook.office.com</a>
+          </li>
+          <li>
+            In the web version of Outlook, open Settings (gear widget icon, top
+            right corner).
+          </li>
+          <li>
+            Choose Account &gt; Signatures or search &ldquo;email
+            signatures.&rdquo; <strong>Click Signatures.</strong>
+          </li>
+          <li>
+            In the Signatures pane, click <strong>+ New signature</strong> and
+            name it Changing Futures.
+            <strong>Do not overwrite an existing signature.</strong>
+          </li>
+          <li>Put your cursor in the signature box.</li>
+          <li>
+            Press <strong>ctrl v</strong> on PCs or
+            <strong>command v</strong> on Macs to paste your new Changing
+            Futures signature. <strong>Do not right-click to paste.</strong>
+          </li>
+          <li>
+            In some instances, a light gray box or other unintended elements
+            will appear below the signature. <strong>Delete them.</strong>
+          </li>
+          <li>Press Save (bottom right).</li>
+          <li>
+            Roll down to <strong>Select default signatures</strong> and choose
+            Changing Futures.
+          </li>
+          <li>Press Save.</li>
+          <li>
+            Exit Settings. Create a new message. Celebrate your new signature!
+          </li>
+        </ul>
       </div>
-      <br class="clear">       
-      
-      <div class="inputContainer phone">
-        <label for="addLine11">Mailing address line 1 <span style="font-size: 12px; font-weight: 100;">(skip to use placeholder input)</span></label>
-        <input id="addLine11" type="text" name="addLine11" placeholder="PO Box 2260" value="">
-      </div>
-      <br class="clear">
-
-      <div class="inputContainer phone">
-        <label for="addLine22">Mailing address line 2 <span style="font-size: 12px; font-weight: 100;">(skip to use placeholder input)</span></label>
-        <input id="addLine22" type="text" name="addLine22" placeholder="Tempe, AZ">
-      </div>
-      <br class="clear">
-
-      <div class="inputContainer phone">
-        <label for="addLine33">Mailing address line 3 <span style="font-size: 12px; font-weight: 100;">(skip to use placeholder input)</span></label>
-        <input id="addLine33" type="text" name="addLine33" placeholder="85280-2260">
-      </div>
-      <br class="clear">     
-
-      <!-- <br class="clear">
-      <br> -->
-      <!-- <h2> Custom statements </h2>
-      <p>
-        <strong>"Add additional statement to current line"</strong> adds a new statement where you provide the entire statement, the text inside of the statement you want to be linked, and the link URL.
-      </p>
-      <p>
-        <strong>"Add new line"</strong> adds a new line to the signature.  Multiple statements can be on one line, and the order of statements and lines can be adjusted by  dragging and dropping.
-      </p>
-      <br>
-      <button onclick="createSubCat()"><i class="fa fa-object-group" aria-hidden="true"></i> Add new line</button>
-      <button onclick="createLinks()"><i class="fa fa-plus" aria-hidden="true"></i> Add additional statement to current line</button> -->
-      <!-- <br>
-      <br class="clear"> -->
-
-      <!--
-      <br>
-      <div id="subLinkHolder" class="ui-sortable">
-
-      </div>
-      <br> -->
-
-      <h2 style="padding-top: 20px;"><span style="background-color: #ffc627; padding: 4px;">Custom statements</span></h2>
-      <div class="inputContainer phone">
-        <label for="customStatements">Your custom statement(s)<span style="font-size: 12px; font-weight: 100;"> (optional; max 240 characters)</span></label>
-        <textarea id="customStatements" name="customStatements" rows="5" maxlength="250" style="width:50em; height: 10em;" placeholder="Your custom statement."></textarea>
-      </div>
-      <br class="clear">
-
-      <h2 style="padding-top: 20px; padding-bottom: 20px;"><span style="background-color: #ffc627; padding: 4px;">Social media</span> <span style="color: red; font-weight: bold; font-size: 16px;">(OPTIONAL)</span></h2></h2>
-      <button onclick="createSocialMedia()" style="margin: 0 0 0 0 !important;"><i class="fa fa-plus" aria-hidden="true"></i> Add social media link</button>
-      <br class="clear">
-      <div id="socialMediaHolder" class="ui-sortable">
-
-      </div>
-      <br class="clear">
-
-      <!--<h2 style="padding-top: 20px; padding-bottom: 20px;"><span style="background-color: #ffc627; padding: 4px;">Choose your footer</span> <span style="color: red; font-weight: bold; font-size: 16px;">(OPTIONAL)</span></h2>
-      <div class="topBottomLabel">
-        #1 in innovation
-      </div>
-      <div class="topBottom2020Label">
-        Campaign ASU 2020
-      </div>
-      <div class="topBottomBlankLabel">
-        Blank
-      </div>
-      <br class="clear">-->
-      <!-- <div class="bottomSelection inno active" data-which="inno">
-
-      </div> -->
-      <!--<div class="bottomSelection camp20" data-which="camp">
-
-      </div>-->
-      <!--<div class="bottomSelection blank" data-which="blank">
-
-      </div>-->
-      <br class="clear">
-      <br>
-      <br>
-      <br class="clear">
-      <br>
-      <br>
-      <br class="clear">
-
     </div>
 
-        <br class="clear">
-
-<!--
-    Preview Stuff
--->
-  <div id="loader">
-    <img class="theStyles" src="./sigfiles/2.gif">
-  </div>
-  <div id="mask">
-    <div class="thePreview">
-    <h2 style="padding-bottom: 20px"><span style="background-color: #ffc627; padding: 4px;">Your signature</span> <span onclick="hidePreview()" class="hidePreview"><i class="fa fa-times-circle"></i> </span></h2>
-      <section class="example" id="example">
-        <table cellpadding="0" cellspacing="0" style="padding-right:8px; font-size:10pt; font-weight:normal; padding-left:8px; line-height:16px; font-family:Arial,Sans Serif; color:#000000">
-      		<tbody><tr>
-            <td>
-      		  	<span id="preName" style="color:#000000; font-weight: bold; font-size:10pt"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-             <span style="color:#000; font-size:8pt;" id="preTitleDept"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-             <span style="color:#000; font-size:8pt;" id="preDept"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-             <span style="color:#000; font-size:8pt;" id="preSubsidiary"></span>
-            </td>
-          </tr>
-          </tbody>
-          <tbody class="tableHolder">
-          </tbody>
-          <!-- <tbody><tr>
-            <td>
-             <span style="color:#000; font-weight: bold; font-size:8pt" id="preSchool"></span>
-            </td>
-          </tr>
-          </tbody> -->
-
-          <!--<tbody id="address"></tbody>-->
-          <tbody>
-            <tr height="30">
-              <td>
-                <span style="color:#000; font-size:8pt" id="prePhone"></span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#000; font-size:8pt" id="preEmail"></span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#000; font-size:8pt" id="preWeb"></span>
-              </td>
-            </tr>
-            <tbody id="addressPO"></tbody>
-            <tbody id="cfContent"></tbody>
-            <tbody id="customStatementsDisplay"></tbody>
-          </tbody>
-          <tbody class="hyperlinkHolder"></tbody>
-          <tbody class="socialMediaHolder"></tbody>
-          <tbody class="bottomHolder"></tbody>
-          </table>
-      </section>
-
-      <button id="button" type="button" onclick="doData()" data-clipboard-target="#example" name="button"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy your signature</button>
-            <br class="clear">
-      <div class="youneedthis" style="display: none">
-
-      </div>
-      <div style="padding-bottom:25px;">
-        <p class="paddingOnTop">To maintain and share a professional and consistent email signature across the enterprise, an email signature generator has been developed for your use. The official email signature follows current best practices, including not adding graphics, as these appear to smartphone users as attachments that must be downloaded.</p>
-        <p class="paddingOnTop">Please be mindful of keeping your email signature concise. It is the responsibility of the employee to ensure signature content meets the standards of ASU Enterprise Partners, as well as their unit or team. Please consult your manager for any other additions beyond those listed below.</p>
-        <p class="paddingOnTop" style="padding-top:10px;"><strong>You MAY:</strong></p>
-        <ul>
-          <li>Add your graduation year after your name (e.g., ’92; note the tail of the apostrophe points to the missing numbers).</li>
-          <li>Add any certifications or advanced degrees you hold (e.g., PhD) if you choose.</li>
-          <li>List your preferred pronouns (use the additional title feature) if you choose.</li>
-          <li>Include the ASU Land Acknowledgement: We acknowledge that Arizona State University is built on the ancestral homelands of Indigenous communities who have inhabited this land for centuries, including the Akimel O’odham (Pima) and Pee Posh (Maricopa) peoples.</li>
-          <li>Include a confidentiality statement: CAUTION: This message may contain confidential and/or privileged communication. Please do not forward without prior permission of sender.</li>
-        </ul>
-        <p class="paddingOnTop" style="padding-top:10px;"><strong>You MAY NOT:</strong></p>
-        <ul>
-          <li>Change the font size, style, color.</li>
-          <li>Add quotes, personal information (e.g., social media), images or other information.</li>
-        </ul>
-        <p>Please consult your manager for any other additions beyond the list above.</p>
-      </div>
-      <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
-        <h3><span style="background-color: #ffc627;">To create the signature block for both your computer and mobile device follow these instructions:</span></h3>
-          <ol>
-            <li>Click "Copy your signature."</li>
-            <li><a href="https://outlook.office365.com/">Go to Office 365 Outlook (web version).</a></li>
-            <li>Click the Settings gear icon in the ribbon on the upper right side of the screen.</li>
-            <li>Click “Mail,” then “Compose and Reply.”</li>
-            <li>Paste the signature block suing control-V (any other pasting options may result in lost formatting) that was created using the Email Signature Generator in the signature box.</li>
-            <li>Add a name for the new signature and then click “Save.”</li>
-            <li>Under “Select default signatures” select the newly created signature for both new messages and for replies/forwards.</li>
-            <li>Open a new email to see your new signature. This will create a signature for emails generated on your computer and mobile device.</li>
-        </ol>
-      </div>
-    </div>
-</div>
-    <script src="./sigfiles/jquery-1.10.2.js"></script>
-    <script src="./sigfiles/jquery-ui.js"></script>
-    <script src="./sigfiles/jquery.form.js"></script>
-    <script src="./sigfiles/custom.js"></script>
-    <script> $( function() {
-      $( "#accordion" ).accordion();
-    } );
-    </script>    
-    <script type="text/javascript">
-        // This code keeps the textarea for custom statements under a certain number of rows long.
-        // Taken from https://stackoverflow.com/questions/556767/limiting-number-of-lines-in-textarea
-        //Limit to # of rows in textarea or arbitrary # of rows
-        $('#customStatements').bind('change keyup', function(event) {
-          //Option 1: Limit to # of rows in textarea
-          rows = $(this).attr('rows');
-          //Optiion 2: Limit to arbitrary # of rows
-          // rows = 6;
-
-          var value = '';
-          var splitval = $(this).val().split("\n");
-
-          for(var a=0;a<rows && typeof splitval[a] != 'undefined';a++) {
-            if(a>0) value += "\n";
-            value += splitval[a];
-          }
-          $(this).val(value);
-        });
-    </script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $('.bottomSelection').on('click', function() {
-          $('.bottomSelection.active').removeClass('active');
-          $(this).addClass('active');
-        });
-        phoneFormatter();
-      });
-      new Clipboard('#button');
-
-
-      $("#subLinkHolder").sortable({
-        distance: 10
-      });
-
-      $("#subDeptHolder").sortable({
-        distance: 10
-      });
-
-      $("#socialMediaHolder").sortable({
-        distance: 10
-      });
-    </script>
-
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>

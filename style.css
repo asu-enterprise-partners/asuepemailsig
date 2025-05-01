@@ -1,0 +1,159 @@
+body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #fff;
+      }
+
+      .content-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 40px;
+        padding: 40px;
+        box-sizing: border-box;
+      }
+
+      .form-section,
+      .preview-section {
+        flex: 1 1 50%;
+        min-width: 0;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 97%;
+        margin: 6px 0 14px;
+        padding: 8px;
+        font-size: 14px;
+      }
+      label {
+        font-weight: bold;
+      }
+      .signature-preview {
+        background: #fff;
+        /* padding: 20px; */
+        line-height: 0.8rem;
+        /* border: 1px solid #ccc; */
+        /* white-space: pre-wrap; */
+      }
+      .highlight {
+        background: #ffc620;
+        font-weight: bold;
+      }
+      .output-html {
+        margin-top: 20px;
+        font-size: 14px;
+        background: #eaeaea;
+        padding: 10px;
+        white-space: pre-wrap;
+        border: 1px dashed #666;
+      }
+      .copy-btn {
+        margin: 10px 10px 10px 0;
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+
+      .btn-gold {
+        background: #ffc620;
+        color: #000;
+        border: none;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 10px 20px;
+        border-radius: 400rem;
+      }
+
+      .btn-gold:hover {
+        transform: scale(1.05);
+      }
+
+
+      .title-group {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      h1 span.highlight-gold, .h1 span.highlight-gold, h2 span.highlight-gold, .h2 span.highlight-gold {
+        box-shadow: -.15em 0 #ffc627, .15em 0 #ffc627;
+        background: #ffc627;
+        color: #191919;
+    }      
+
+      @media (max-width: 768px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 20px;
+          padding: 20px;
+        }
+
+        .form-section,
+        .preview-section {
+          flex: 1 1 100%;
+          min-width: 100%;
+        }
+
+        h2 {
+          font-size: 18px;
+        }
+
+        input,
+        textarea,
+        select {
+          font-size: 16px;
+          padding: 10px;
+        }
+
+        .copy-btn {
+          width: 100%;
+          font-size: 16px;
+          padding: 12px;
+        }
+
+        .signature-preview,
+        .output-html {
+          word-break: break-word;
+          overflow-wrap: anywhere;
+          overflow-x: auto;
+          font-size: 14px;
+        }
+
+        .title-group {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .title-group button {
+          width: 100%;
+          margin-top: 5px;
+        }
+      }
+
+      .page-header {
+        width: 100%;
+        padding: 20px 40px;
+        box-sizing: border-box;
+      }
+
+      .page-header h1 {
+        margin: 0;
+        font-size: 26px;
+        /* color: #8c1d40; */
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Mobile adjustments */
+      @media (max-width: 768px) {
+        .page-header {
+          padding: 16px 20px;
+        }
+
+        .page-header h1 {
+          font-size: 22px;
+          /* text-align: center; */
+        }
+      }
